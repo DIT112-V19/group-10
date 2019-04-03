@@ -6,7 +6,7 @@
 const unsigned short LEFT_ODOMETER_PIN = 2;
 const unsigned short RIGHT_ODOMETER_PIN = 3;
 
-BrushedMotor leftMotor(8, 10, 9); //from premade example automatedmovement for reference. 
+BrushedMotor leftMotor(8, 10, 9); // from premade example automatedmovement for reference. 
 BrushedMotor rightMotor(12, 13, 11);
 DifferentialControl control(leftMotor, rightMotor);
 
@@ -15,7 +15,6 @@ DirectionlessOdometer leftOdometer(100);
 DirectionlessOdometer rightOdometer(100);
 
 SmartCar car(control, gyroscope, leftOdometer, rightOdometer);
-
 
 void setup() {  
   pinMode(trigPin, OUTPUT);
@@ -47,9 +46,9 @@ void loop() {
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
   
-  distance = duration / 58.2;//here we determine the distance in cm
+  distance = duration / 58.2; // here we determine the distance in cm
 
- // if(distance < 15){
+ // if(distance < 15) {
     //Tarik here you will fill in parameters
 //}
 
