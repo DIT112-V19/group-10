@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Group10App</string>
+    <string name="title">Self Driving Car</string>
+    <string name="company_name">Group 10</string>
 </resources>
