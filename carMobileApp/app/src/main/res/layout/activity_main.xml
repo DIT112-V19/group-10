@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.372" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/lightBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
@@ -50,7 +50,6 @@
         android:layout_marginBottom="80dp"
         android:width="100dp"
         android:height="100dp"
-        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,29 +60,96 @@
         tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/carLogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/lightBackground"
         app:layout_constraintEnd_toEndOf="@+id/title"
         app:layout_constraintStart_toStartOf="@+id/title"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:srcCompat="@drawable/taxi" />
+        app:srcCompat="@drawable/taxi"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/github"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginBottom="8dp"
+        android:contentDescription="@string/github_button_content_desc"
         android:tint="@color/colorBackgroundLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/lightBackground"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/github" />
+
+    <Button
+        android:id="@+id/buttonAutoHomepage"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginLeft="162dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginRight="162dp"
+        android:onClick="openAutoMode"
+        android:text="@string/button_auto_homepage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lightBackground" />
+
+    <Button
+        android:id="@+id/buttonManualHomepage"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginLeft="162dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginRight="162dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/button_manual_homepage"
+        app:layout_constraintBottom_toBottomOf="@+id/lightBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAutoHomepage" />
+
+    <TextView
+        android:id="@+id/credits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/credits"
+        android:textColor="@color/textColorLight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/github"
+        app:layout_constraintTop_toBottomOf="@+id/lightBackground" />
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginRight="69dp"
+        android:layout_marginBottom="19dp"
+        android:text="@string/instructions"
+        android:textColor="@color/textColorLight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/github"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lightBackground" />
 
 </android.support.constraint.ConstraintLayout>

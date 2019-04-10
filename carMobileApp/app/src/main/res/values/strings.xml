@@ -2,4 +2,10 @@
     <string name="app_name">Group10App</string>
     <string name="title">Self Driving Car</string>
     <string name="company_name">Group 10</string>
+    <!--Homepage-->
+    <string name="button_auto_homepage">Autonomous Mode</string>
+    <string name="button_manual_homepage">Manual Mode</string>
+    <string name="github_button_content_desc">Link to project repository on Github</string>
+    <string name="credits">Credits</string>
+    <string name="instructions">Instructions</string>
 </resources>
