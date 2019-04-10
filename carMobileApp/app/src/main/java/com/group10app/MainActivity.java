@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openAutoMode(View view) {
-        Intent intentAuto = new Intent(this, AutonomousMode.class);
-        startActivity(intentAuto);
+        Intent intent = new Intent(this, AutonomousMode.class);
+        startActivity(intent);
     }
 
 

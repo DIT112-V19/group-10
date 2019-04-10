@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/logo"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundDark"
     tools:context=".MainActivity">
@@ -30,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="592dp"
-        android:text="@string/title"
+        android:text="@string/tagline"
         android:textColor="@color/textColorLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/companyName"
