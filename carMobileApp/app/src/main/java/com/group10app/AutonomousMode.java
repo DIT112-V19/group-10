@@ -26,6 +26,7 @@ public class AutonomousMode extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
     }
 
     // Updates the current status
