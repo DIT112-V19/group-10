@@ -27,14 +27,12 @@
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="80dp"
         android:width="100dp"
         android:height="100dp"
-        android:background="@color/colorBackgroundDark"
-        android:theme="@style/AppTheme.AppBarOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -77,15 +75,15 @@
         app:layout_constraintTop_toBottomOf="@+id/lightBackground" />
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/carLogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="150dp"
         app:layout_constraintBottom_toTopOf="@+id/lightBackground"
-        app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintStart_toStartOf="@+id/header"
-        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintEnd_toEndOf="@+id/lightBackground"
+        app:layout_constraintStart_toStartOf="@+id/lightBackground"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/taxi"
         tools:ignore="ContentDescription" />
 
@@ -97,8 +95,8 @@
         android:layout_marginBottom="350dp"
         android:text="@string/current_status"
         app:layout_constraintBottom_toTopOf="@+id/footer"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintStart_toStartOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="@+id/carLogo"
+        app:layout_constraintStart_toStartOf="@+id/carLogo"
         app:layout_constraintTop_toTopOf="@+id/lightBackground"
         app:layout_constraintVertical_bias="0.585" />
 
@@ -110,22 +108,21 @@
         android:layout_marginBottom="395dp"
         android:text="@string/initial_status"
         app:layout_constraintBottom_toBottomOf="@+id/lightBackground"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintStart_toStartOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="@+id/carLogo"
+        app:layout_constraintStart_toStartOf="@+id/carLogo"
         app:layout_constraintTop_toBottomOf="@+id/currentStatus" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
         android:onClick="toggleButton"
         android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="@+id/lightBackground"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="@+id/carLogo"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="@+id/carLogo"
+        app:layout_constraintTop_toBottomOf="@+id/carLogo"
         app:layout_constraintVertical_bias="0.776" />
 
     <TextView
