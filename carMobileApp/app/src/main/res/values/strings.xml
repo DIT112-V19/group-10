@@ -22,6 +22,8 @@
     <string name="initial_status">stopped</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
+    <string name="current_speed">current speed (cm/s):</string>
+    <string name="distance_travelled">distance travelled (cm):</string>
 
     <!--Autonomous mode-->
     <string name="auto_mode">Autonomous Mode</string>

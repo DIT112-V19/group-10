@@ -6,6 +6,13 @@
         <item name="colorPrimary">@color/colorBackgroundDark</item>
         <item name="colorPrimaryDark">@color/colorBackgroundDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <!--Toolbar-->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColor">@color/textColorLight</item>
+        <item name="android:background">@color/colorBackgroundDark</item>
     </style>
 
 </resources>
