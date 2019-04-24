@@ -9,9 +9,10 @@ import android.widget.TextView;
 
 public class AutonomousMode extends AppCompatActivity {
 
-    private static boolean isStopped = true;
-    private static boolean obstacleDetected = false;
+    private static boolean isStopped = true;  // why is it static?
+    private static boolean obstacleDetected = false;  // why is it static?
     // Current status options
+    private TextView currentStatus;
     private static final String OBS = "obstacle detected";
     private static final String FINE = "driving";
     private static final String STOPPED = "stopped";
@@ -29,9 +30,25 @@ public class AutonomousMode extends AppCompatActivity {
 
     }
 
+    // -------------- setters and getters for testing -------------------
+    // probably better to be non-static
+    public static void setIsStopped(boolean isStopped) {
+        AutonomousMode.isStopped = isStopped;
+    }
+
+    public static void setObstacleDetected(boolean obstacleDetected) {
+        AutonomousMode.obstacleDetected = obstacleDetected;
+    }
+
+    public TextView getCurrentStatus() {
+        return currentStatus;
+    }
+
+    // ----------------------------------------------------------------
+
     // Updates the current status
-    public void getStatus(Boolean isStopped) {
-        TextView currentStatus = findViewById(R.id.updatedStatus);
+    public void getStatus() {
+        currentStatus = findViewById(R.id.updatedStatus);
         if (obstacleDetected)
             currentStatus.setText(OBS);
         else if(isStopped)
@@ -40,22 +57,25 @@ public class AutonomousMode extends AppCompatActivity {
             currentStatus.setText(FINE);
     }
 
-    public void buttonPress() {
+    // boolean for easier testing
+    public boolean buttonPress() {
+        boolean carStopped;
         if (isStopped) {
-            startCar();
+            carStopped = startCar();
         } else {
-            stopCar();
+            carStopped = stopCar();
         }
+        return carStopped;
     }
 
     // Start car
-    public void startCar() {
-
+    public boolean startCar() {
+        return false;
     }
 
     // Stop car
-    public void stopCar() {
-
+    public boolean stopCar() {
+        return true;
     }
 
     // Updates START/STOP button when pressed
@@ -68,11 +88,11 @@ public class AutonomousMode extends AppCompatActivity {
         else
             isStopped = true;
 
-        getStatus(isStopped);
+        getStatus();
     }
 
     public void getSpeed(View view) {
-        TextView textView = findViewById(R.id.updatedCurrentSpeed);
-        textView.setText(update.getSpeed());
+        currentStatus = findViewById(R.id.updatedCurrentSpeed);
+        currentStatus.setText(update.getSpeed());
     }
 }
