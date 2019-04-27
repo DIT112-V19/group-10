@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 
 @RunWith(AndroidJUnit4.class)
-public class AutonomousModeAndroidUnitTest{
+public class AutonomousModeInstrumentedTest{
 
     private MainActivity mActivity;
     private AutonomousMode testMode;
