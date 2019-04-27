@@ -20,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openManualMode(View view) {
+        Intent intent = new Intent (this, ManualMode.class);
+        startActivity(intent);
+    }
+
 
 
 }
