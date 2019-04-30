@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [
-    <!ENTITY title "Self Driving Car">
-    <!ENTITY company "Group 10">
-    ]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY title "Self Driving Car"><!ENTITY company "Group 10">]>
 
 <resources>
     <string name="app_name">Group10App</string>
