@@ -21,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openManualMode(View view) {
+        Intent intent = new Intent (this, ManualMode.class);
+        startActivity(intent);
+    }
+
     //Links to github repository
     public void openRepo(View view) {
         String gitUrl = getResources().getString(R.string.githubUrl);
@@ -29,5 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 Uri.parse(gitUrl));
             startActivity(browserIntent);
     }
+
+    
+
+
+
 
 }
