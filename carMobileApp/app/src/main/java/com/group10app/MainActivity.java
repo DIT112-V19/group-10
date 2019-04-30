@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    //Links to github repository
     public void openRepo(View view) {
         String gitUrl = getResources().getString(R.string.githubUrl);
         Intent browserIntent = new Intent(

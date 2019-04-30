@@ -90,15 +90,12 @@
     <TextView
         android:id="@+id/currentStatus"
         android:layout_width="wrap_content"
-        android:layout_height="14dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="350dp"
         android:text="@string/current_status"
-        app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintEnd_toEndOf="@+id/carLogo"
         app:layout_constraintStart_toStartOf="@+id/carLogo"
-        app:layout_constraintTop_toTopOf="@+id/lightBackground"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintTop_toTopOf="@+id/lightBackground" />
 
     <TextView
         android:id="@+id/updatedStatus"
