@@ -28,7 +28,7 @@ public class UpdateStatus {
     }
 
     public int getSpeed() {
-        return 1;
+        return currentSpeed;
     }
 
 
