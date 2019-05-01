@@ -67,3 +67,7 @@ script:
     # Build all .ino files for Arduino Mega
     - cd $TRAVIS_BUILD_DIR/src
     - build_platform mega2560
+    
+after_success:
+    # add coverage report
+  - bash <(curl -s https://codecov.io/bash)
