@@ -29,5 +29,6 @@
 
     <!--Footer-->
     <string name="footer">&company; | &title;</string>
+    <string name="githubUrl">https://github.com/DIT112-V19/group-10</string>
 </resources>
 
