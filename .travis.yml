@@ -9,6 +9,8 @@ env:
         # Set the minimum Android API to support
         # Note: Not all of them work well with Travis
         - ANDROID_TARGET=android-22
+        # adding Codecov token
+        - CODECOV_TOKEN="7bf71864-b77b-4980-b121-3faaf327c4bd"
 
 before_cache:
     - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -62,8 +64,15 @@ script:
     - ./gradlew build --stacktrace
     # Run the Android app's unit tests
     - ./gradlew test --info
+    - ./gradlew build jacocoTestReport
+    - ./gradlew createDebugCoverageReport
+    - ./gradlew connectedCheck
     # Run the Android app's instrumented tests
     - ./gradlew connectedAndroidTest
     # Build all .ino files for Arduino Mega
     - cd $TRAVIS_BUILD_DIR/src
     - build_platform mega2560
+    
+after_success:
+    # add coverage report
+  - bash <(curl -s https://codecov.io/bash)
