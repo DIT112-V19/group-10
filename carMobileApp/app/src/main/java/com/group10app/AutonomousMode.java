@@ -16,7 +16,6 @@ public class AutonomousMode extends AppCompatActivity {
     private static final String OBS = "obstacle detected";
     private static final String FINE = "driving";
     private static final String STOPPED = "stopped";
-    private static String test = ".";
 
     private UpdateStatus update = new UpdateStatus();
 
