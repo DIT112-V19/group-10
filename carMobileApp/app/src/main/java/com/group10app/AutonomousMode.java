@@ -40,7 +40,7 @@ public class AutonomousMode extends AppCompatActivity {
     return currentStatus;
   }
 
-  public boolean getObstacleDetected(){
+  public boolean getObstacleDetected() {
     return obstacleDetected;
   }
 

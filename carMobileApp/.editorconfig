@@ -8,7 +8,7 @@ insert_final_newline = false
 
 # Matches multiple files with brace expansion notation
 # Set default charset and 2 space indentation
-[*.{java,xml}]
+[*.{java,xml,.gradle}]
 charset = utf-8
 indent_style = space
 indent_size = 2

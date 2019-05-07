@@ -45,5 +45,6 @@
   <string name="is_serial">Serial Present</string>
   <string name="menu_connect">Connect</string>
   <string name="menu_disconnect">Disconnect</string>
+  <string name="connect_to_car">Connect to Car</string>
 </resources>
 
