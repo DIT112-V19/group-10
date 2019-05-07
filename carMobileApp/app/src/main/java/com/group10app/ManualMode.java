@@ -1,20 +1,12 @@
 package com.group10app;
 
-import android.annotation.SuppressLint;
-import android.bluetooth.BluetoothGatt;
-import android.bluetooth.BluetoothGattCharacteristic;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-
-import java.nio.charset.Charset;
 
 public class ManualMode extends AppCompatActivity {
 
@@ -37,7 +29,6 @@ public class ManualMode extends AppCompatActivity {
     leftArrow = findViewById(R.id.leftArrow);
 
     forwardArrow.setOnClickListener(new OnClickListener() {
-      //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/forward/";
@@ -47,7 +38,6 @@ public class ManualMode extends AppCompatActivity {
     });
 
     backwardArrow.setOnClickListener(new OnClickListener() {
-      @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/backward/";
@@ -57,7 +47,6 @@ public class ManualMode extends AppCompatActivity {
     });
 
     rightArrow.setOnClickListener(new OnClickListener() {
-      @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/right/";
@@ -67,7 +56,6 @@ public class ManualMode extends AppCompatActivity {
     });
 
     leftArrow.setOnClickListener(new OnClickListener() {
-      @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/left/";
@@ -107,5 +95,4 @@ public class ManualMode extends AppCompatActivity {
             connectionData("Unable to write BGC characteristic");
         }
     }*/
-
 }
