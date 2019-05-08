@@ -56,17 +56,17 @@ public class AutonomousModeInstrumentedTest {
     @Test
     public void CheckIfObstacleDetectedIsFalseWhenSet(){
 
-        AutonomousMode.setObstacleDetected(false);
-        assertFalse(AutonomousMode.getObstacleDetected());
+      mAutonomousModeTestRule.getActivity().setObstacleDetected(false);
+        assertFalse(mAutonomousModeTestRule.getActivity().getObstacleDetected());
     }
 
     @Test
     public void ButtonTextAndStatusUpdateMustChangeAfterStoppingCar(){
 
         // when no obstacle is detected
-        AutonomousMode.setObstacleDetected(false);
+      mAutonomousModeTestRule.getActivity().setObstacleDetected(false);
         // and the car is not stopped
-        AutonomousMode.setIsStopped(false);
+      mAutonomousModeTestRule.getActivity().setIsStopped(false);
         // the expected status is "start" after pushing the button
         String expectedButtonStatus = "start";
         String expectedUpdateStatus = "stopped";
@@ -80,9 +80,9 @@ public class AutonomousModeInstrumentedTest {
     @Test
     public void ButtonTextAndStatusUpdateMustChangeAfterStartingCar(){
         // when no obstacle is detected
-        AutonomousMode.setObstacleDetected(false);
+      mAutonomousModeTestRule.getActivity().setObstacleDetected(false);
         // and the car is stopped
-        AutonomousMode.setIsStopped(true);
+      mAutonomousModeTestRule.getActivity().setIsStopped(true);
         // the expected status is "stop" after pushing the button
         String expectedButtonStatus = "stop";
         String expectedUpdateStatus = "driving";
@@ -96,9 +96,9 @@ public class AutonomousModeInstrumentedTest {
     @Test
     public void ButtonTextAndStatusUpdateMustChangeAfterObstacleDetected(){
         // when no obstacle is detected
-        AutonomousMode.setObstacleDetected(true);
+      mAutonomousModeTestRule.getActivity().setObstacleDetected(true);
         // and the car is stopped
-        AutonomousMode.setIsStopped(true);
+      mAutonomousModeTestRule.getActivity().setIsStopped(true);
         // the expected status is "stop" after pushing the button
         String expectedButtonStatus = "stop";
         String expectedUpdateStatus = "obstacle detected";
