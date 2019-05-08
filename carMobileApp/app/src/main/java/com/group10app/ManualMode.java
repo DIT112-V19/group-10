@@ -49,7 +49,7 @@ public class ManualMode extends AppCompatActivity {
     });
 
     backwardArrow.setOnClickListener(new OnClickListener() {
-      @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+      //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/backward/";
@@ -63,7 +63,7 @@ public class ManualMode extends AppCompatActivity {
     });
 
     rightArrow.setOnClickListener(new OnClickListener() {
-      @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+      //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/right/";
@@ -77,7 +77,7 @@ public class ManualMode extends AppCompatActivity {
     });
 
     leftArrow.setOnClickListener(new OnClickListener() {
-      @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+      //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/left/";
