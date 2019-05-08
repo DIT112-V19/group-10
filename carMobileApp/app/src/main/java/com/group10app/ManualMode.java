@@ -1,20 +1,12 @@
 package com.group10app;
 
-import android.annotation.SuppressLint;
-import android.bluetooth.BluetoothGatt;
-import android.bluetooth.BluetoothGattCharacteristic;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-
-import java.nio.charset.Charset;
 
 public class ManualMode extends AppCompatActivity {
 
@@ -121,8 +113,8 @@ public class ManualMode extends AppCompatActivity {
     Log.e(LOG_TAG, text.toString());
 
   }
-
-  /*private void BGC_value (String outputMessage){
+  
+    /*private void BGC_value (String outputMessage){
         BGC.setValue(outputMessage.getBytes(Charset.forName("UTF-8")));
         if(gatt.writeCharacteristic(BGC)) {
             connectionData("Sent: " + outputMessage);
@@ -130,7 +122,6 @@ public class ManualMode extends AppCompatActivity {
             connectionData("Unable to write BGC characteristic");
         }
     }*/
-
     // -------------- getters and setters for testing ---------------------
   public ImageView getFwdArrow(){
     return forwardArrow;
@@ -162,3 +153,4 @@ public class ManualMode extends AppCompatActivity {
   // -----------------------------------------------------------------------
 
 }
+

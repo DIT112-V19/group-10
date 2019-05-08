@@ -9,94 +9,77 @@ import android.widget.TextView;
 
 public class AutonomousMode extends AppCompatActivity {
 
-    private static boolean isStopped = true;  // why is it static?
-    private static boolean obstacleDetected = false;  // why is it static?
-    // Current status options
-    private TextView currentStatus;
-    private static final String OBS = "obstacle detected";
-    private static final String FINE = "driving";
-    private static final String STOPPED = "stopped";
+  private boolean isStopped = true;
+  private boolean obstacleDetected = false;
+  // Current status options
+  private TextView currentStatus;
+  private static final String OBS = "obstacle detected";
+  private static final String FINE = "driving";
+  private static final String STOPPED = "stopped";
 
-    private UpdateStatus update = new UpdateStatus();
+  private UpdateStatus update = new UpdateStatus();
 
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_autonomous_mode);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_autonomous_mode);
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+  }
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+  public void setIsStopped(boolean isStopped) {
+    this.isStopped = isStopped;
+  }
 
-    }
+  public void setObstacleDetected(boolean obstacleDetected) {
+    this.obstacleDetected = obstacleDetected;
+  }
 
-    // -------------- setters and getters for testing -------------------
-    // probably better to be non-static
-    public static void setIsStopped(boolean isStopped) {
-        AutonomousMode.isStopped = isStopped;
-    }
+  public TextView getCurrentStatus() {
+    return currentStatus;
+  }
 
-    public static void setObstacleDetected(boolean obstacleDetected) {
-        AutonomousMode.obstacleDetected = obstacleDetected;
-    }
+  public boolean getObstacleDetected() {
+    return obstacleDetected;
+  }
 
-    public TextView getCurrentStatus() {
-        return currentStatus;
-    }
+  // Updates the current status
+  public void getStatus() {
+    currentStatus = findViewById(R.id.updatedStatus);
 
-    public static boolean getObstacleDetected(){
-        return obstacleDetected;
-    }
-    
-    // ----------------------------------------------------------------
+    if (obstacleDetected) currentStatus.setText(OBS);
+    else if(isStopped) currentStatus.setText(STOPPED);
+    else currentStatus.setText(FINE);
+  }
 
-    // Updates the current status
-    public void getStatus() {
-        currentStatus = findViewById(R.id.updatedStatus);
-        if (obstacleDetected)
-            currentStatus.setText(OBS);
-        else if(isStopped)
-            currentStatus.setText(STOPPED);
-        else
-            currentStatus.setText(FINE);
-    }
+  // boolean for easier testing
+  public boolean buttonPress() {
+    return isStopped ? startCar() : stopCar();
+  }
 
-    // boolean for easier testing
-    public boolean buttonPress() {
-        boolean carStopped;
-        if (isStopped) {
-            carStopped = startCar();
-        } else {
-            carStopped = stopCar();
-        }
-        return carStopped;
-    }
+  // Start car
+  public boolean startCar() {
+    return false;
+  }
 
-    // Start car
-    public boolean startCar() {
-        return false;
-    }
+  // Stop car
+  public boolean stopCar() {
+    return true;
+  }
 
-    // Stop car
-    public boolean stopCar() {
-        return true;
-    }
+  // Updates START/STOP button when pressed
+  public void toggleButton(View view) {
+    Button button = findViewById(R.id.button);
+    button.setText(update.getButton(isStopped));
 
-    // Updates START/STOP button when pressed
-    public void toggleButton(View view) {
-        Button button = findViewById(R.id.button);
-        button.setText(update.getButton(isStopped));
+    isStopped = !isStopped;
 
-        if(isStopped)
-            isStopped = false;
-        else
-            isStopped = true;
+    getStatus();
+  }
 
-        getStatus();
-    }
-
-    public void getSpeed(View view) {
-        currentStatus = findViewById(R.id.updatedCurrentSpeed);
-        currentStatus.setText(update.getSpeed());
-    }
+  public void getSpeed(View view) {
+    currentStatus = findViewById(R.id.updatedCurrentSpeed);
+    currentStatus.setText(update.getSpeed());
+  }
 }
