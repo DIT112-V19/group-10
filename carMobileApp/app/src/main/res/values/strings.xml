@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY title "Self Driving Car"><!ENTITY company "Group 10">]>
 
 <resources>
-    <string name="app_name">Group10App</string>
-    <string name="title">&title;</string>
-    <string name="company_name">&company;</string>
+  <string name="app_name">Group10App</string>
+  <string name="title">&title;</string>
+  <string name="company_name">&company;</string>
 
-    <!--Homepage-->
-    <string name="tagline">The experience of a lifetime</string>
-    <string name="button_auto_homepage">Autonomous Mode</string>
-    <string name="button_manual_homepage">Manual Mode</string>
-    <string name="github_button_content_desc">Link to project repository on Github</string>
-    <string name="credits">Credits</string>
-    <string name="instructions">Instructions</string>
+  <!--Homepage-->
+  <string name="tagline">The experience of a lifetime</string>
+  <string name="button_auto_homepage">Autonomous Mode</string>
+  <string name="button_manual_homepage">Manual Mode</string>
+  <string name="github_button_content_desc">Link to project repository on Github</string>
+  <string name="credits">Credits</string>
+  <string name="instructions">Instructions</string>
 
-    <!--Both modes-->
-    <string name="current_status">Current status:</string>
-    <string name="initial_status">stopped</string>
-    <string name="start">start</string>
-    <string name="stop">stop</string>
-    <string name="current_speed">current speed (cm/s):</string>
-    <string name="distance_travelled">distance travelled (cm):</string>
+  <!--Both modes-->
+  <string name="current_status">Current status:</string>
+  <string name="initial_status">stopped</string>
+  <string name="start">start</string>
+  <string name="stop">stop</string>
+  <string name="current_speed">current speed (cm/s):</string>
+  <string name="distance_travelled">distance travelled (cm):</string>
 
-    <!--Autonomous mode-->
-    <string name="auto_mode">Autonomous Mode</string>
+  <!--Autonomous mode-->
+  <string name="auto_mode">Autonomous Mode</string>
 
-    <!--Manual mode-->
-    <string name="manual_mode">Manual Mode</string>
+  <!--Manual mode-->
+  <string name="manual_mode">Manual Mode</string>
 
-    <!--Footer-->
-    <string name="footer">&company; | &title;</string>
-    <string name="githubUrl">https://github.com/DIT112-V19/group-10</string>
+  <!--Footer-->
+  <string name="footer">&company; | &title;</string>
+  <string name="githubUrl">https://github.com/DIT112-V19/group-10</string>
+  <string name="unknown_device">Unknown Device</string>
+  <string name="title_devices">Self Driving Car</string>
+  <string name="ble_not_supported">Low Energy Bluetooth Not Supported</string>
+  <string name="error_bluetooth_not_supported">Bluetooth Not Supported</string>
+  <string name="menu_scan">Scan</string>
+  <string name="menu_stop">Stop</string>
+  <string name="unknown_service">Unknown Service</string>
+  <string name="connected">Connected</string>
+  <string name="disconnected">Disconnected</string>
+  <string name="label_device_address">Device Address</string>
+  <string name="label_state">Device State</string>
+  <string name="label_data">Data</string>
+  <string name="is_serial">Serial Present</string>
+  <string name="menu_connect">Connect</string>
+  <string name="menu_disconnect">Disconnect</string>
+  <string name="connect_to_car">Connect to Car</string>
 </resources>
 

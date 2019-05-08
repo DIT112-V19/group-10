@@ -89,36 +89,35 @@
         app:srcCompat="@drawable/github" />
 
     <Button
-        android:id="@+id/buttonAutoHomepage"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="162dp"
-        android:layout_marginLeft="162dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="162dp"
-        android:onClick="openAutoMode"
-        android:text="@string/button_auto_homepage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lightBackground" />
+      android:id="@+id/buttonAutoHomepage"
+      android:layout_width="200dp"
+      android:layout_height="70dp"
+      android:layout_marginStart="162dp"
+      android:layout_marginTop="204dp"
+      android:layout_marginEnd="162dp"
+      android:onClick="openAutoMode"
+      android:text="@string/button_auto_homepage"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.495"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/lightBackground" />
 
     <Button
-        android:id="@+id/buttonManualHomepage"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="162dp"
-        android:layout_marginLeft="162dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="162dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="openManualMode"
-        android:text="@string/button_manual_homepage"
-        app:layout_constraintBottom_toBottomOf="@+id/lightBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAutoHomepage" />
+      android:id="@+id/buttonManualHomepage"
+      android:layout_width="200dp"
+      android:layout_height="70dp"
+      android:layout_marginStart="162dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginEnd="162dp"
+      android:layout_marginBottom="8dp"
+      android:onClick="openManualMode"
+      android:text="@string/button_manual_homepage"
+      app:layout_constraintBottom_toBottomOf="@+id/lightBackground"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.495"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/buttonAutoHomepage"
+      app:layout_constraintVertical_bias="0.773" />
 
     <TextView
         android:id="@+id/credits"
@@ -153,5 +152,21 @@
         app:layout_constraintEnd_toStartOf="@+id/github"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lightBackground" />
+
+  <Button
+    android:id="@+id/button2"
+    android:layout_width="191dp"
+    android:layout_height="64dp"
+    android:layout_marginStart="1dp"
+    android:layout_marginTop="37dp"
+    android:layout_marginBottom="42dp"
+    android:onClick="openDeviceScan"
+    android:text="@string/connect_to_car"
+    app:layout_constraintBottom_toTopOf="@+id/buttonAutoHomepage"
+    app:layout_constraintEnd_toEndOf="@+id/carLogo"
+    app:layout_constraintHorizontal_bias="0.554"
+    app:layout_constraintStart_toStartOf="@+id/carLogo"
+    app:layout_constraintTop_toBottomOf="@+id/carLogo"
+    app:layout_constraintVertical_bias="0.444" />
 
 </android.support.constraint.ConstraintLayout>
