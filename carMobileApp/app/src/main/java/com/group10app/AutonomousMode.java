@@ -36,10 +36,6 @@ public class AutonomousMode extends AppCompatActivity {
     this.obstacleDetected = obstacleDetected;
   }
 
-  public TextView getCurrentStatus() {
-    return currentStatus;
-  }
-
   public boolean getObstacleDetected() {
     return obstacleDetected;
   }
