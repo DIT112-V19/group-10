@@ -7,6 +7,7 @@ Self driving cars are getting more and more popular as the underlying technology
 This product works on two platforms: an Arduino car and a mobile application.
 The car will be able to drive autonomously by following a line and avoiding obstacles. Using a mobile app, the user will be able to manually control the car. Both the car and the app will have security measures, to prevent unauthorized access to the car. The app will allow the user to easily switch between autonomous and manual mode.
 
+https://travis-ci.org/DIT112-V19/group-10.svg?branch=master
 
 ### Features
 ##### Obstacle avoidance
