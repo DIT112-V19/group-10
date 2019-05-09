@@ -7,6 +7,9 @@ Self driving cars are getting more and more popular as the underlying technology
 This product works on two platforms: an Arduino car and a mobile application.
 The car will be able to drive autonomously by following a line and avoiding obstacles. Using a mobile app, the user will be able to manually control the car. Both the car and the app will have security measures, to prevent unauthorized access to the car. The app will allow the user to easily switch between autonomous and manual mode.
 
+[![Build Status](https://travis-ci.org/DIT112-V19/group-10.svg?branch=master)](https://travis-ci.org/DIT112-V19/group-10)
+
+[![codecov](https://codecov.io/gh/DIT112-V19/group-10/branch/master/graph/badge.svg)](https://codecov.io/gh/DIT112-V19/group-10/branch/master)
 
 ### Features
 ##### Obstacle avoidance
@@ -25,5 +28,5 @@ This feature gives the user manual control over the car. Using the app, the user
 This is an important feature because the car should only be driven by authorized users. The app will have a password/fingerprint scanner to allow access. The main challenge would be to make certain that this feature is effective, as we are only implementing it on one platform.
 
 ##### Code quality
-We emphasize high code quality in our work: we take a step beyond functionality and invest in maintainability. Master branch is protected by continuous integration platform that builds and tests the code when any change is applied. Additionally, unit test coverage report is issued. Mobile app coverage is 24% and continuously increasing. Arduino code tests are planned.
+We emphasize high code quality in our work: we take a step beyond functionality and invest in maintainability. Master branch is protected by continuous integration platform that builds and tests the code when any change is applied. Additionally, unit test coverage report is issued. Mobile app coverage is continuously increasing. Arduino code tests are planned.
 
