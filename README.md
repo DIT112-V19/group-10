@@ -28,5 +28,5 @@ This feature gives the user manual control over the car. Using the app, the user
 This is an important feature because the car should only be driven by authorized users. The app will have a password/fingerprint scanner to allow access. The main challenge would be to make certain that this feature is effective, as we are only implementing it on one platform.
 
 ##### Code quality
-We emphasize high code quality in our work: we take a step beyond functionality and invest in maintainability. Master branch is protected by continuous integration platform that builds and tests the code when any change is applied. Additionally, unit test coverage report is issued. Mobile app coverage is 24% and continuously increasing. Arduino code tests are planned.
+We emphasize high code quality in our work: we take a step beyond functionality and invest in maintainability. Master branch is protected by continuous integration platform that builds and tests the code when any change is applied. Additionally, unit test coverage report is issued. Mobile app coverage is continuously increasing. Arduino code tests are planned.
 
