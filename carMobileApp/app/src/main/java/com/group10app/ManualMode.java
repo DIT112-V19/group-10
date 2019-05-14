@@ -14,8 +14,8 @@ public class ManualMode extends AppCompatActivity {
   private ImageView backwardArrow;
   private ImageView rightArrow;
   private ImageView leftArrow;
-  //final BluetoothGattCharacteristic BGC =null ;
-  //final BluetoothGatt gatt = null;
+//  final BluetoothGattCharacteristic BGC = null;
+//  final BluetoothGatt gatt = null;
   private final String LOG_TAG = ManualMode.class.getSimpleName();
 
   // attributes for testing arrow click
@@ -35,11 +35,10 @@ public class ManualMode extends AppCompatActivity {
     leftArrow = findViewById(R.id.leftArrow);
 
     forwardArrow.setOnClickListener(new OnClickListener() {
-      //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/forward/";
-        //BGC_value(outputMessage);
+        //bgcValue(outputMessage);
         connectionData("Sent: " + outputMessage);
         fwdArrowClicked = true;
         bckwArrowClicked = false;
@@ -49,11 +48,10 @@ public class ManualMode extends AppCompatActivity {
     });
 
     backwardArrow.setOnClickListener(new OnClickListener() {
-      //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/backward/";
-        //BGC_value(outputMessage);
+        //bgcValue(outputMessage);
         connectionData("Sent: " + outputMessage);
         bckwArrowClicked = true;
         rightArrowClicked = false;
@@ -63,11 +61,10 @@ public class ManualMode extends AppCompatActivity {
     });
 
     rightArrow.setOnClickListener(new OnClickListener() {
-      //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/right/";
-        //BGC_value(outputMessage);
+        //bgcValue(outputMessage);
         connectionData("Sent: " + outputMessage);
         rightArrowClicked = true;
         leftArrowClicked = false;
@@ -77,11 +74,10 @@ public class ManualMode extends AppCompatActivity {
     });
 
     leftArrow.setOnClickListener(new OnClickListener() {
-      //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
       @Override
       public void onClick(View v) {
         String outputMessage = "/left/";
-        //BGC_value(outputMessage);
+        //bgcValue(outputMessage);
         connectionData("Sent: " + outputMessage);
         leftArrowClicked = true;
         fwdArrowClicked = false;
@@ -113,16 +109,17 @@ public class ManualMode extends AppCompatActivity {
     Log.e(LOG_TAG, text.toString());
 
   }
-  
-    /*private void BGC_value (String outputMessage){
-        BGC.setValue(outputMessage.getBytes(Charset.forName("UTF-8")));
-        if(gatt.writeCharacteristic(BGC)) {
-            connectionData("Sent: " + outputMessage);
-        }else{
-            connectionData("Unable to write BGC characteristic");
-        }
-    }*/
-    // -------------- getters and setters for testing ---------------------
+
+//  private void bgcValue(String outputMessage){
+//    BGC.setValue(outputMessage.getBytes(Charset.forName("UTF-8")));
+//    if(gatt.writeCharacteristic(BGC)) {
+//      connectionData("Sent: " + outputMessage);
+//    }else{
+//      connectionData("Unable to write BGC characteristic");
+//    }
+//  }
+
+  // -------------- getters and setters for testing ---------------------
   public ImageView getFwdArrow(){
     return forwardArrow;
   }
@@ -148,9 +145,4 @@ public class ManualMode extends AppCompatActivity {
   public boolean getRightArrowClicked(){
     return rightArrowClicked;
   }
-
-
-  // -----------------------------------------------------------------------
-
 }
-

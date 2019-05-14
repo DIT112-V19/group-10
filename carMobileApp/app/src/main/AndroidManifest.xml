@@ -19,9 +19,8 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     tools:ignore="GoogleAppIndexingWarning">
-    <activity android:name=".ManualMode" />
-    <activity android:name=".AutonomousMode" />
-    <activity android:name=".BluetoothConnect">
+
+    <activity android:name=".DeviceList">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -29,6 +28,8 @@
       </intent-filter>
     </activity>
     <activity android:name=".MainActivity" />
+    <activity android:name=".ManualMode" />
+    <activity android:name=".AutonomousMode" />
 
   </application>
 

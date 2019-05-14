@@ -16,49 +16,42 @@ import java.util.UUID;
 
 public class DeviceConnection extends AsyncTask<Void, Void, Void> {
 
-  private boolean ConnectSuccess = true;
   private ProgressDialog progress;
-  BluetoothAdapter mBluetooth = null;
-  BluetoothSocket btSocket = null;
-  private boolean isBtConnected = false;
+  private boolean isConnected;
   private Context context;
-  private Intent intent;
   private String deviceName;
   private String macAddress;
 
-  static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+  private BluetoothSocket btSocket;
+
+  private static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
   public DeviceConnection(Context context, Intent intent) {
     this.context = context;
-    this.intent = intent;
-    this.ConnectSuccess = true;
+    this.isConnected = true;
 
     deviceName = intent.getStringExtra("EXTRA_NAME");
     macAddress = intent.getStringExtra("EXTRA_ADDRESS");
   }
 
-  public DeviceConnection(Object o) {
-  }
-
   @Override
-  protected void onPreExecute()
-  {
-    progress = ProgressDialog.show(context, "Connecting...", "Please wait!!!");  //show a progress dialog
+  protected void onPreExecute() {
+    progress = ProgressDialog.show(context, "Connecting...", "Please wait!!!");
   }
 
   @Override
   protected Void doInBackground(Void... devices) {
     try {
-      if (btSocket == null || !isBtConnected) {
-        mBluetooth = BluetoothAdapter.getDefaultAdapter();
-        BluetoothDevice bluetoothDevice = mBluetooth.getRemoteDevice(macAddress);
+
+      if (btSocket == null || !isConnected) {
+        BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
+        BluetoothDevice bluetoothDevice = bluetooth.getRemoteDevice(macAddress);
         btSocket = bluetoothDevice.createInsecureRfcommSocketToServiceRecord(myUUID);
         BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
-        btSocket.connect();//start connection
+        btSocket.connect();
       }
 
       ((Activity)context).runOnUiThread(new Runnable() {
-
         @Override
         public void run() {
           TextView name = ((Activity)context).findViewById(R.id.device_name);
@@ -69,27 +62,28 @@ public class DeviceConnection extends AsyncTask<Void, Void, Void> {
       });
     }
     catch (IOException e) {
-      ConnectSuccess = false;
+      isConnected = false;
     }
+
     return null;
   }
+
   @Override
   protected void onPostExecute(Void result) {
     super.onPostExecute(result);
 
-    if (!ConnectSuccess) {
+    if (!isConnected) {
       msg("DeviceConnection Failed. Is it a SPP Bluetooth? Try again.");
       ((Activity) context).finish();
-    }
-    else {
+    } else {
       msg("Connected.");
-      isBtConnected = true;
+      isConnected = true;
     }
+
     progress.dismiss();
   }
 
-  private void msg(String s)
-  {
+  private void msg(String s) {
     Toast.makeText(context.getApplicationContext(), s, Toast.LENGTH_LONG).show();
   }
 }
