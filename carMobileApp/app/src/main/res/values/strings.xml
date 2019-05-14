@@ -6,7 +6,7 @@
   <string name="company_name">&company;</string>
 
   <!--Homepage-->
-  <string name="tagline">The experience of a lifetime</string>
+  <string name="tagLine">The experience of a lifetime</string>
   <string name="button_auto_homepage">Autonomous Mode</string>
   <string name="button_manual_homepage">Manual Mode</string>
   <string name="github_button_content_desc">Link to project repository on Github</string>
@@ -32,19 +32,18 @@
   <string name="githubUrl">https://github.com/DIT112-V19/group-10</string>
   <string name="unknown_device">Unknown Device</string>
   <string name="title_devices">Self Driving Car</string>
-  <string name="ble_not_supported">Low Energy Bluetooth Not Supported</string>
-  <string name="error_bluetooth_not_supported">Bluetooth Not Supported</string>
-  <string name="menu_scan">Scan</string>
-  <string name="menu_stop">Stop</string>
-  <string name="unknown_service">Unknown Service</string>
-  <string name="connected">Connected</string>
-  <string name="disconnected">Disconnected</string>
-  <string name="label_device_address">Device Address</string>
-  <string name="label_state">Device State</string>
-  <string name="label_data">Data</string>
-  <string name="is_serial">Serial Present</string>
-  <string name="menu_connect">Connect</string>
-  <string name="menu_disconnect">Disconnect</string>
-  <string name="connect_to_car">Connect to Car</string>
+
+
+  <string name="action_settings">Settings</string>
+  <string name="Text">BT Status: -</string>
+  <string name="on">Turn On</string>
+  <string name="off">Turn Off</string>
+  <string name="List">List paired Devices</string>
+  <string name="connect_to_car">CONNECT TO CAR</string>
+  <string name="device_name">Device Name:</string>
+  <string name="device_address">Address:</string>
+  <string name="device_state">Status:</string>
+  <string name="device_disconnected">Connected</string>
+
 </resources>
 

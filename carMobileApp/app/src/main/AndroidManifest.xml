@@ -21,17 +21,15 @@
     tools:ignore="GoogleAppIndexingWarning">
     <activity android:name=".ManualMode" />
     <activity android:name=".AutonomousMode" />
-    <activity android:name=".MainActivity">
+    <activity android:name=".BluetoothConnect">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".DeviceScanActivity" />
-    <activity android:name=".DeviceControlActivity" />
+    <activity android:name=".MainActivity" />
 
-    <service android:name=".BluetoothService" />
   </application>
 
 </manifest>
