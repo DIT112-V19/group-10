@@ -22,7 +22,7 @@ public class DeviceList extends AppCompatActivity {
   private static final int REQUEST_ENABLE_BT = 1;
   private TextView btStatusText;
   private ListView listView;
-  private BluetoothAdapter bluetoothAdapter;
+  protected BluetoothAdapter bluetoothAdapter;
 
   private BluetoothSocket btSocket = null;
 
@@ -49,7 +49,7 @@ public class DeviceList extends AppCompatActivity {
           Toast.LENGTH_LONG).show();
 
     } else {
-      if (!bluetoothAdapter.isEnabled()) btStatusText.setText("Status: BT Off");
+      if (!bluetoothAdapter.isEnabled()) btStatusText.setText("BT Status: Off");
       else btStatusText.setText("BT Status: On");
 
 
