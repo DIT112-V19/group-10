@@ -7,6 +7,12 @@ BrushedMotor leftMotor(8, 10, 9);
 BrushedMotor rightMotor(12, 13, 11);
 DifferentialControl control(leftMotor, rightMotor);
 
+const int TRIGGER_PIN = 40; 
+const int ECHO_PIN = 41; 
+const unsigned int MAX_DISTANCE = 50;
+
+SR04 front(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+
 GY50 gyroscope(37);
 DirectionlessOdometer leftOdometer(100);
 DirectionlessOdometer rightOdometer(100);
@@ -15,6 +21,7 @@ SmartCar car(control, gyroscope, leftOdometer, rightOdometer);
 
 void setup() {
   Serial3.begin(9600);
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -36,8 +43,10 @@ void handleInput() { //handle serial input if there is any
         break;
       case 't': //make a triangle
         triangle();
-        break;
-      
+        break; 
+      case 'd': //make a triangle
+        drive();
+        break;   
       default: 
         Serial3.println("Unknown command");
     }
@@ -46,13 +55,39 @@ void handleInput() { //handle serial input if there is any
 
 void manualControl(){
 
-  const int fSpeed = 70; //70% of the full speed forward
-  const int bSpeed = -70; //70% of the full speed backward
-  const int lDegrees = -75; //degrees to turn left
-  const int rDegrees = 75; //degrees to turn right
+  int fSpeed = 70; //70% of the full speed forward
+  int bSpeed = -70; //70% of the full speed backward
+  int lDegrees = -75; //degrees to turn left
+  int rDegrees = 75; //degrees to turn right
   
+  while (Serial3.available()){
   char input = Serial3.read(); //read everything that has been received so far and log down the last entry
     switch (input) {
+      case '2': 
+        fSpeed = 20;
+        bSpeed = 20; 
+        Serial3.println("20");
+        break;
+      case '4': 
+        fSpeed = 40;
+        bSpeed = 40;
+        Serial3.println("40"); 
+        break;
+      case '6': 
+        fSpeed = 60;
+        bSpeed = 60; 
+        Serial3.println("60");
+        break;
+      case '8': 
+        fSpeed = 80;
+        bSpeed = 80; 
+        Serial3.println("80");
+        break;
+      case '0': 
+        fSpeed = 100;
+        bSpeed = 100; 
+        Serial3.println("100");
+        break;  
       case 'l': //rotate counter-clockwise going forward
         car.setSpeed(fSpeed);
         car.setAngle(lDegrees);
@@ -69,6 +104,10 @@ void manualControl(){
         car.setSpeed(bSpeed);
         car.setAngle(0);
         break;
+      case 's': //stop
+        car.setSpeed(0);
+        car.setAngle(0);
+        break;
       case 'q': 
         car.setSpeed(0);
         car.setAngle(0);
@@ -78,7 +117,7 @@ void manualControl(){
         car.setSpeed(0);
         car.setAngle(0);
     }
-  
+  }
   
   }
 
@@ -106,6 +145,10 @@ void triangle(){
 
   go(distanceToTravel, carSpeed);
   rotate(degreesToTurn, carSpeed);
+
+  car.disableCruiseControl();
+
+  loop();
 
   
   }
@@ -174,6 +217,29 @@ void go(long centimeters, float speed) {
   car.setSpeed(0);
 }
 
+void drive(){
+
+  car.enableCruiseControl();
+
+  while (Serial3.available() && Serial3.read() != 'q'){
+    
+  car.update();
+  car.setSpeed(0.5);
+
+  if (front.getDistance() < 15 && front.getDistance() > 0) {
+    rotate(90, 0.5);
+  
+  }
+
+  if (front.getDistance() < 15 && front.getDistance() > 0) {
+    rotate(180, 0.5);
+  
+  }
+
+  }
+
+  car.disableCruiseControl();
+}
 void automatedParking(){}
 
 void lineFollowing(){}
