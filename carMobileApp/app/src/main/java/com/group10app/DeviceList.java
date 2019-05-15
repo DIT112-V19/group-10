@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,7 @@ public class DeviceList extends AppCompatActivity {
   private TextView btStatusText;
   private ListView listView;
   protected BluetoothAdapter bluetoothAdapter;
+  protected Set<BluetoothDevice> pairedDevices;
 
   private BluetoothSocket btSocket = null;
 
@@ -32,11 +34,12 @@ public class DeviceList extends AppCompatActivity {
     setContentView(R.layout.bluetooth_connection);
 
     bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+    pairedDevices = new HashSet<>();
 
     btStatusText = findViewById(R.id.status_text);
     Button turnBTOnButton = findViewById(R.id.turnOn);
     Button turnBTOffButton = findViewById(R.id.turnOff);
-    Button listPairedDevicesButton = findViewById(R.id.paired);
+    Button listPairedDevicesButton = findViewById(R.id.get_paired_devices);
     listView = findViewById(R.id.listView);
 
     if (bluetoothAdapter == null) {
@@ -62,15 +65,15 @@ public class DeviceList extends AppCompatActivity {
 
       turnBTOffButton.setOnClickListener(new OnClickListener() {
         @Override
-        public void onClick(View v) {
-          turnOffBT(v);
+        public void onClick(View view) {
+          turnOffBT(view);
         }
       });
 
       listPairedDevicesButton.setOnClickListener(new OnClickListener() {
         @Override
-        public void onClick(View v) {
-          getPairedDevices();
+        public void onClick(View view) {
+          getPairedDevices(view);
         }
       });
     }
@@ -99,8 +102,8 @@ public class DeviceList extends AppCompatActivity {
     }
   }
 
-  private void getPairedDevices() {
-    Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
+  public void getPairedDevices(View view) {
+    pairedDevices = bluetoothAdapter.getBondedDevices();
     ArrayList<String> list = new ArrayList<>();
 
     if (pairedDevices.size() > 0) {
