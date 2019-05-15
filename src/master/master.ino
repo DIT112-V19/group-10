@@ -218,10 +218,14 @@ void go(long centimeters, float speed) {
 }
 
 void drive(){
+  
+  char input;
 
   car.enableCruiseControl();
 
-  while (Serial3.available() && Serial3.read() != 'q'){
+  while (Serial3.available() && input != 'q'){
+    
+  input = Serial3.read();
     
   car.update();
   car.setSpeed(0.5);
