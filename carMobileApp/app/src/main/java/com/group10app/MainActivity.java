@@ -2,8 +2,8 @@ package com.group10app;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,28 +12,26 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    new DeviceConnection(this, getIntent()).execute();
   }
 
   public void openDeviceScan(View view) {
-    startActivity(new Intent(this, DeviceScanActivity.class));
+    startActivity(new Intent(this, DeviceList.class));
   }
 
   public void openAutoMode(View view) {
-    Intent intent = new Intent(this, AutonomousMode.class);
-    startActivity(intent);
+    startActivity(new Intent(this, AutonomousMode.class));
   }
 
   public void openManualMode(View view) {
-    Intent intent = new Intent (this, ManualMode.class);
-    startActivity(intent);
+    startActivity(new Intent(this, ManualMode.class));
   }
 
   //Links to github repository
   public void openRepo(View view) {
     String gitUrl = getResources().getString(R.string.githubUrl);
-    Intent browserIntent = new Intent(
-        Intent.ACTION_VIEW,
-        Uri.parse(gitUrl));
+    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(gitUrl));
     startActivity(browserIntent);
   }
 }
