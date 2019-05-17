@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.Toast;
+
+import java.nio.charset.Charset;
 
 public class ManualMode extends AppCompatActivity {
 
@@ -14,10 +17,9 @@ public class ManualMode extends AppCompatActivity {
   private ImageView backwardArrow;
   private ImageView rightArrow;
   private ImageView leftArrow;
-//  final BluetoothGattCharacteristic BGC = null;
-//  final BluetoothGatt gatt = null;
-  private final String LOG_TAG = ManualMode.class.getSimpleName();
 
+  private final String LOG_TAG = ManualMode.class.getSimpleName();
+  private DeviceControl deviceControl;
   // attributes for testing arrow click
   private boolean leftArrowClicked = false;
   private boolean rightArrowClicked = false;
@@ -34,11 +36,13 @@ public class ManualMode extends AppCompatActivity {
     rightArrow = findViewById(R.id.rightArrow);
     leftArrow = findViewById(R.id.leftArrow);
 
+    deviceControl = new DeviceControl(this);
+
     forwardArrow.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        String outputMessage = "/forward/";
-        //bgcValue(outputMessage);
+        String outputMessage = "f";
+        deviceControl.write(outputMessage);
         connectionData("Sent: " + outputMessage);
         fwdArrowClicked = true;
         bckwArrowClicked = false;
@@ -50,8 +54,8 @@ public class ManualMode extends AppCompatActivity {
     backwardArrow.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        String outputMessage = "/backward/";
-        //bgcValue(outputMessage);
+        String outputMessage = "b";
+        deviceControl.write(outputMessage);
         connectionData("Sent: " + outputMessage);
         bckwArrowClicked = true;
         rightArrowClicked = false;
@@ -63,8 +67,8 @@ public class ManualMode extends AppCompatActivity {
     rightArrow.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        String outputMessage = "/right/";
-        //bgcValue(outputMessage);
+        String outputMessage = "r";
+        deviceControl.write(outputMessage);
         connectionData("Sent: " + outputMessage);
         rightArrowClicked = true;
         leftArrowClicked = false;
@@ -76,8 +80,8 @@ public class ManualMode extends AppCompatActivity {
     leftArrow.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        String outputMessage = "/left/";
-        //bgcValue(outputMessage);
+        String outputMessage = "l";
+        deviceControl.write(outputMessage);
         connectionData("Sent: " + outputMessage);
         leftArrowClicked = true;
         fwdArrowClicked = false;
@@ -110,25 +114,21 @@ public class ManualMode extends AppCompatActivity {
 
   }
 
-//  private void bgcValue(String outputMessage){
-//    BGC.setValue(outputMessage.getBytes(Charset.forName("UTF-8")));
-//    if(gatt.writeCharacteristic(BGC)) {
-//      connectionData("Sent: " + outputMessage);
-//    }else{
-//      connectionData("Unable to write BGC characteristic");
-//    }
-//  }
+
 
   // -------------- getters and setters for testing ---------------------
   public ImageView getFwdArrow(){
     return forwardArrow;
   }
+
   public ImageView getBckwArrow(){
     return backwardArrow;
   }
+
   public ImageView getLeftArrow(){
     return leftArrow;
   }
+
   public ImageView getRightArrow(){
     return rightArrow;
   }
@@ -136,12 +136,15 @@ public class ManualMode extends AppCompatActivity {
   public boolean getFwdArrowClicked(){
     return fwdArrowClicked;
   }
+
   public boolean getBckwArrowClicked(){
     return bckwArrowClicked;
   }
+
   public boolean getLeftArrowClicked(){
     return leftArrowClicked;
   }
+
   public boolean getRightArrowClicked(){
     return rightArrowClicked;
   }

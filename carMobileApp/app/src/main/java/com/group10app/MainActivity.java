@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+ DeviceControl deviceControl;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     new DeviceConnection(this, getIntent()).execute();
+    deviceControl = new DeviceControl(this);
   }
 
   public void openDeviceScan(View view) {
@@ -26,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
   public void openManualMode(View view) {
     startActivity(new Intent(this, ManualMode.class));
+    String msg = "a";
+    deviceControl.write(msg);
   }
+
 
   //Links to github repository
   public void openRepo(View view) {
