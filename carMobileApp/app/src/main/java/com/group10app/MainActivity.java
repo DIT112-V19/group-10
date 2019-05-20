@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
- DeviceControl deviceControl;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     new DeviceConnection(this, getIntent()).execute();
-    deviceControl = new DeviceControl(this);
+
   }
 
   public void openDeviceScan(View view) {
@@ -28,8 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
   public void openManualMode(View view) {
     startActivity(new Intent(this, ManualMode.class));
-    String msg = "a";
-    deviceControl.write(msg);
+    String outputMessage = "a";
+    try {
+      DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
 
