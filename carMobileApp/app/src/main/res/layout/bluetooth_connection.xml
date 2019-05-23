@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".DeviceList" >
+
+  <TextView
+    android:id="@+id/status_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:text="@string/Text"
+    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="30dp" >
+
+    <Button
+      android:id="@+id/turnOn"
+      android:layout_width="142dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:text="@string/on" />
+
+    <Button
+      android:id="@+id/turnOff"
+      android:layout_width="152dp"
+      android:layout_height="wrap_content"
+      android:text="@string/off" />
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="80dp" >
+
+    <Button
+      android:id="@+id/get_paired_devices"
+      android:layout_width="326dp"
+      android:layout_height="match_parent"
+      android:layout_marginStart="15dp"
+      android:onClick="getPairedDevices"
+      android:text="@string/List" />
+
+    <ListView
+      android:id="@+id/listView"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+
+    </ListView>
+
+  </LinearLayout>
+
+</RelativeLayout>
