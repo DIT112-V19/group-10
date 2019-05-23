@@ -1,5 +1,18 @@
 #include <Smartcar.h>
 
+#define LEFT_SENSORPIN 6
+#define CENTER_SENSORPIN 7
+#define RIGHT_SENSORPIN 4
+
+int frontMotorLeft = 8;
+int rearMotorLeft = 10;
+int speedPinLeft = 9;
+int frontMotorRight = 12;
+int rearMotorRight = 13;
+int speedPinRight = 11;
+
+const int STOPPING_DISTANCE= 15;
+
 const unsigned short LEFT_ODOMETER_PIN = 2;
 const unsigned short RIGHT_ODOMETER_PIN = 3;
 
@@ -94,31 +107,27 @@ void manualControl()
         fSpeed = 100;
         bSpeed = -100;
         break;
+      case 'x':
+        fSpeed = 0;
+        bSpeed = 0;
+        car.setSpeed(0);
+        car.setAngle(0);
+        break;
       case 'l': //rotate counter-clockwise going forward
         car.setSpeed(fSpeed);
         car.setAngle(lDegrees);
-        delay(100);
-        car.setSpeed(0);
-        car.setAngle(0);
         break;
       case 'r': //turn clock-wise
         car.setSpeed(fSpeed);
         car.setAngle(rDegrees);
-        delay(100);
-        car.setSpeed(0);
-        car.setAngle(0);
         break;
       case 'f': //go ahead
         car.setSpeed(fSpeed);
         car.setAngle(0);
-        delay(100);
-        car.setSpeed(0);
         break;
       case 'b': //go back
         car.setSpeed(bSpeed);
         car.setAngle(0);
-        delay(100);
-        car.setSpeed(0);
         break;
       case 'q': //main menu
         car.setSpeed(0);
@@ -157,7 +166,8 @@ void triangle()
 
   go(distanceToTravel, carSpeed);
   rotate(degreesToTurn, carSpeed);
-
+  
+  delay(3000);
   car.disableCruiseControl();
 }
 
@@ -243,27 +253,22 @@ void drive()
   int n;
   char input;
 
+  
+
   while (input != 'q')
   {
-    if (Serial3.available()){
+    if (true){
     input = Serial3.read();
-    n = random(0, 2);
-    if ((front.getDistance() > 15) || (front.getDistance() < 0))
-    {
-      car.overrideMotorSpeed(70, 70);
-    }
+   
+    car.overrideMotorSpeed(40, 40);
 
-    if ((front.getDistance() < 15) && (front.getDistance() > 0) && n == 0)
+    while ((front.getDistance() < 15) && (front.getDistance() > 0))
     {
       car.overrideMotorSpeed(-50, 50);
-      delay(1500);
+      delay(500);
     }
 
-    if ((front.getDistance() < 15) && (front.getDistance() > 0) && n == 1)
-    {
-      car.overrideMotorSpeed(50, -50);
-      delay(1500);
-    }
+    
 
     }
   }
@@ -272,4 +277,142 @@ void drive()
 }
 void automatedParking() {}
 
-void lineFollowing() {}
+void lineFollowing() {
+
+  char input;
+  Serial.begin(9600);
+ 
+ pinMode(LEFT_SENSORPIN,INPUT);
+ pinMode(CENTER_SENSORPIN,INPUT);
+ pinMode(RIGHT_SENSORPIN,INPUT);
+ 
+ leftOdometer.attach(LEFT_ODOMETER_PIN, []() {
+ leftOdometer.update();
+ });
+ rightOdometer.attach(RIGHT_ODOMETER_PIN, []() {
+ rightOdometer.update();
+ });
+ 
+ car.enableCruiseControl();
+ car.setSpeed(0.2);
+
+while (input != 'q')
+  {
+    if (true)
+    {
+      
+      input = Serial3.read();
+
+      car.update();
+
+  Serial.println(front.getDistance());
+
+  // read sensor Inputs
+  byte leftSensor=digitalRead(LEFT_SENSORPIN);
+  byte centerSensor=digitalRead(CENTER_SENSORPIN);
+  byte rightSensor=digitalRead(RIGHT_SENSORPIN);
+  int distance=front.getDistance();
+if( (distance < STOPPING_DISTANCE) && (distance > 0) ){
+  Serial.print("Here we go");
+    Serial.print(distance);
+
+  pause();
+  delay(950);
+  right();
+  delay(1000);
+  forward();
+  delay(1000);
+  pause();
+  delay(1000);
+  left();
+  delay(1500);
+  forward();
+  delay(1400);
+  right();
+  delay(500);
+ }else{
+  
+  
+/*LineFollowing cases starts here
+ __________________________________________________________________
+ Case Forward*/
+if(leftSensor ==1  && rightSensor == 1 && centerSensor==0)
+ {
+  forward();
+  delay(50);
+ }
+  
+ //Case Left
+ else if(leftSensor ==1  && rightSensor == 0 && centerSensor==1)
+ {
+  left();
+  delay(75);
+ }
+ 
+  else if(leftSensor ==1  && rightSensor == 0 && centerSensor==0)
+ {
+  left();
+  delay(75);
+ }
+  //Case Right
+ else if(leftSensor ==0  && rightSensor == 1 && centerSensor==1)
+ {
+  right();
+  delay(75);
+ }
+ 
+  else if(leftSensor ==0  && rightSensor == 1 && centerSensor==1)
+ {
+  right ();
+  delay(75);
+ }
+ 
+ if(leftSensor ==1  && rightSensor == 1 && centerSensor==1)
+ {
+  pause();
+  delay(50);
+ }
+ }
+      
+      }}
+ 
+  }
+
+void pause(){
+  digitalWrite(frontMotorRight, LOW);
+  digitalWrite(rearMotorRight, LOW);
+  digitalWrite(frontMotorLeft, LOW);
+  digitalWrite(rearMotorLeft, LOW);
+  Serial.print("P");
+
+ }
+
+ 
+void left(){
+  digitalWrite(frontMotorLeft, HIGH);
+  digitalWrite(rearMotorLeft, LOW);
+  digitalWrite(frontMotorRight, LOW);
+  digitalWrite(rearMotorRight, LOW);
+  Serial.print("L");
+ }
+
+ 
+ void right(){
+  digitalWrite(frontMotorRight, HIGH);
+  digitalWrite(rearMotorRight, LOW);
+  digitalWrite(frontMotorLeft, LOW);
+  digitalWrite(rearMotorLeft, LOW);
+  Serial.print("R");
+
+ }
+
+ void forward(){
+  digitalWrite(frontMotorRight, HIGH);
+  digitalWrite(rearMotorRight, LOW);
+  digitalWrite(frontMotorLeft, HIGH);
+  digitalWrite(rearMotorLeft, LOW);
+  Serial.print("F");
+
+ }
+  
+  
