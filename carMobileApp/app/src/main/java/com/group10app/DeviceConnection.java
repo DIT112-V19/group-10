@@ -22,7 +22,7 @@ public class DeviceConnection extends AsyncTask<Void, Void, Void> {
   private String deviceName;
   private String macAddress;
 
-  private BluetoothSocket btSocket;
+  protected static BluetoothSocket btSocket;
 
   private static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
