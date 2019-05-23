@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
   public void openAutoMode(View view) {
     startActivity(new Intent(this, AutonomousMode.class));
+    /*String outputMessage = "d";
+    try {
+      DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }*/
   }
 
   public void openManualMode(View view) {

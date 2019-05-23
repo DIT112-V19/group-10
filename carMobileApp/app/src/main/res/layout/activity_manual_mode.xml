@@ -7,30 +7,13 @@
   android:background="@color/colorBackgroundDark"
   tools:context=".ManualMode">
 
-  <SeekBar
-    android:id="@+id/seekBar2"
-    android:layout_width="252dp"
-    android:layout_height="78dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="30dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginBottom="8dp"
-    android:background="@color/colorPrimaryDark"
-    android:isScrollContainer="true"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.498"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.373" />
-
   <ImageView
     android:id="@+id/rightArrow"
     android:layout_width="140dp"
     android:layout_height="80dp"
     android:layout_marginStart="192dp"
     android:layout_marginTop="8dp"
-    android:layout_marginEnd="48dp"
+    android:layout_marginEnd="32dp"
     android:layout_marginBottom="8dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -44,16 +27,13 @@
     android:layout_width="140dp"
     android:layout_height="80dp"
     android:layout_marginStart="8dp"
-    android:layout_marginTop="20dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="260dp"
     android:longClickable="true"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.498"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/seekBar2"
-    app:layout_constraintVertical_bias="0.0"
     app:srcCompat="@drawable/forward_arrow" />
 
   <ImageView
@@ -78,7 +58,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginBottom="15dp"
+    android:layout_marginBottom="10dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.498"
@@ -106,6 +86,26 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.796" />
+
+  <SeekBar
+    android:id="@+id/seekBar2"
+    style="@style/Widget.AppCompat.SeekBar.Discrete"
+    android:layout_width="231dp"
+    android:layout_height="100dip"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="30dp"
+    android:max="5"
+    android:paddingLeft="16dip"
+    android:paddingTop="16dip"
+    android:paddingRight="16dip"
+    android:paddingBottom="16dip"
+    android:progress="2"
+    app:layout_constraintBottom_toTopOf="@+id/forwardArrow"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

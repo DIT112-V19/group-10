@@ -1,8 +1,11 @@
 package com.group10app;
 
+import android.bluetooth.BluetoothClass;
+import android.support.design.animation.MotionTiming;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -20,6 +23,7 @@ public class ManualMode extends AppCompatActivity {
   private ImageView rightArrow;
   private ImageView leftArrow;
   private Button stopButton;
+
 
 
   private final String LOG_TAG = ManualMode.class.getSimpleName();
@@ -40,6 +44,36 @@ public class ManualMode extends AppCompatActivity {
     leftArrow = findViewById(R.id.leftArrow);
     stopButton = findViewById(R.id.stopButton);
 
+    /*forwardArrow.setOnTouchListener(new View.OnTouchListener() {
+      @Override
+      public boolean onTouch(View v, MotionEvent event) {
+        if(event.getAction() == MotionEvent.ACTION_DOWN) {
+
+          char outputMessage = 'f';
+          try {
+              DeviceConnection.btSocket.getOutputStream().write(outputMessage);
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+          connectionData("Sent: " + outputMessage);
+          return true;
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+          char outputMessage = 'q';
+          try {
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage);
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+          return true;
+        }
+        fwdArrowClicked = true;
+        bckwArrowClicked = false;
+        rightArrowClicked = false;
+        leftArrowClicked = false;
+        return false;
+      }
+    }); */
+
     forwardArrow.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -50,10 +84,10 @@ public class ManualMode extends AppCompatActivity {
           e.printStackTrace();
         }
         connectionData("Sent: " + outputMessage);
-        fwdArrowClicked = true;
-        bckwArrowClicked = false;
+        bckwArrowClicked = true;
         rightArrowClicked = false;
         leftArrowClicked = false;
+        fwdArrowClicked = false;
       }
     });
 
@@ -111,7 +145,7 @@ public class ManualMode extends AppCompatActivity {
     stopButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        String outputMessage = "q";
+        String outputMessage = "x";
         try {
           DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
         } catch (IOException e) {
@@ -130,6 +164,41 @@ public class ManualMode extends AppCompatActivity {
     speedControl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
       @Override
       public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        String outputMessage;
+
+        try{
+        switch (progress){
+          case 0:
+            outputMessage = "x";
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+            break;
+          case 1:
+            outputMessage = "2";
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+            break;
+          case 2:
+            outputMessage = "4";
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+            break;
+          case 3:
+            outputMessage = "6";
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+            break;
+          case 4:
+            outputMessage = "8";
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+            break;
+          case 5:
+            outputMessage = "0";
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+            break;
+        }
+
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+
+
         Log.i("Seekbar value",Integer.toString(progress));
       }
 
