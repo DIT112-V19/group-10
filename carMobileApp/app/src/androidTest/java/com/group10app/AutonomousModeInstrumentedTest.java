@@ -67,12 +67,11 @@ public class AutonomousModeInstrumentedTest {
       mAutonomousModeTestRule.getActivity().setObstacleDetected(false);
         // and the car is not stopped
       mAutonomousModeTestRule.getActivity().setIsStopped(false);
-        // the expected status is "start" after pushing the button
-        String expectedButtonStatus = "start";
+        // the expected status is "stopped" after pushing the button
         String expectedUpdateStatus = "stopped";
 
-        // button clicked, button text checked
-        onView(withId(R.id.button)).perform(click()).check(matches(withText(expectedButtonStatus)));
+        // button clicked
+        onView(withId(R.id.autonomousDrive)).perform(click());
         // updateStatus text checked
         onView(withId(R.id.updatedStatus)).check(matches(withText(expectedUpdateStatus)));
     }
@@ -83,12 +82,11 @@ public class AutonomousModeInstrumentedTest {
       mAutonomousModeTestRule.getActivity().setObstacleDetected(false);
         // and the car is stopped
       mAutonomousModeTestRule.getActivity().setIsStopped(true);
-        // the expected status is "stop" after pushing the button
-        String expectedButtonStatus = "stop";
+        // the expected status is "driving" after pushing the button
         String expectedUpdateStatus = "driving";
 
-        // button clicked, button text checked
-        onView(withId(R.id.button)).perform(click()).check(matches(withText(expectedButtonStatus)));
+        // button clicked
+        onView(withId(R.id.autonomousDrive)).perform(click());
         // updateStatus text checked
         onView(withId(R.id.updatedStatus)).check(matches(withText(expectedUpdateStatus)));
     }
@@ -99,17 +97,16 @@ public class AutonomousModeInstrumentedTest {
       mAutonomousModeTestRule.getActivity().setObstacleDetected(true);
         // and the car is stopped
       mAutonomousModeTestRule.getActivity().setIsStopped(true);
-        // the expected status is "stop" after pushing the button
-        String expectedButtonStatus = "stop";
+        // the expected status is "obstacle detected" after pushing the button
         String expectedUpdateStatus = "obstacle detected";
 
-        // button clicked, button text checked
-        onView(withId(R.id.button)).perform(click()).check(matches(withText(expectedButtonStatus)));
+        // button clicked
+        onView(withId(R.id.autonomousDrive)).perform(click());
         // updateStatus text checked
         onView(withId(R.id.updatedStatus)).check(matches(withText(expectedUpdateStatus)));
 
         // the status update must remain the same even if button pressed
-        onView(withId(R.id.button)).perform(click());
+        onView(withId(R.id.autonomousDrive)).perform(click());
         // updateStatus text checked
         onView(withId(R.id.updatedStatus)).check(matches(withText(expectedUpdateStatus)));
     }
