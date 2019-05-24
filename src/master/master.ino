@@ -37,7 +37,6 @@ DirectionlessOdometer rightOdometer(100);
 
 SmartCar car(control, gyroscope, leftOdometer, rightOdometer);
 
-
 void setup()
 {
   Serial3.begin(9600);
@@ -148,6 +147,7 @@ void triangle()
   const float carSpeed = 1.0;
   const long distanceToTravel = 40;
   const int degreesToTurn = 120;
+
 
   leftOdometer.attach(LEFT_ODOMETER_PIN, []() {
     leftOdometer.update();
@@ -269,7 +269,7 @@ void drive()
       delay(500);
     }
 
-    
+    Serial3.println(car.getSpeed());
 
     }
   }
