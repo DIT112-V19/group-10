@@ -1,6 +1,7 @@
 package com.group10app;
 
 import android.bluetooth.BluetoothClass;
+import android.content.Intent;
 import android.support.design.animation.MotionTiming;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -218,6 +219,11 @@ public class ManualMode extends AppCompatActivity {
     Log.e(LOG_TAG, text.toString());
 
   }
+
+  public void openJoystickMode(View view) {
+    startActivity(new Intent(this, Joystick.class));
+  }
+
 
 
   // -------------- getters and setters for testing ---------------------

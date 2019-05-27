@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorBackgroundDark"
+  tools:context=".Joystick">
+
+  <ImageView
+    android:id="@+id/lightBackground"
+    android:layout_width="0dp"
+    android:layout_height="386dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="200dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginBottom="80dp"
+    android:width="100dp"
+    android:height="100dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1.0"
+    app:srcCompat="@drawable/round_rectangle_shape"
+    tools:ignore="ContentDescription" />
+
+  <ImageView
+    android:id="@+id/carLogo"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="150dp"
+    app:layout_constraintBottom_toTopOf="@+id/lightBackground"
+    app:layout_constraintEnd_toEndOf="@+id/lightBackground"
+    app:layout_constraintStart_toStartOf="@+id/lightBackground"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/taxi"
+    tools:ignore="ContentDescription" />
+
+  <TextView
+    android:id="@+id/textView2"
+    style="@style/heading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:text="@string/title"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <io.github.controlwear.virtual.joystick.android.JoystickView xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/joystickView"
+    android:layout_width="368dp"
+    android:layout_height="292dp"
+    android:layout_alignParentBottom="true"
+    android:layout_margin="32dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/joystick_background_2"
+    android:rotation="-90"
+    custom:JV_buttonImage="@drawable/blue_ball_2"
+    custom:JV_fixedCenter="false"
+    custom:layout_constraintBottom_toBottomOf="@+id/lightBackground"
+    custom:layout_constraintEnd_toEndOf="parent"
+    custom:layout_constraintHorizontal_bias="0.495"
+    custom:layout_constraintStart_toStartOf="parent"
+    custom:layout_constraintTop_toBottomOf="@+id/carLogo" />
+
+  <TextView
+    android:id="@+id/joystickNumber"
+    style="@style/text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="159dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="167dp"
+    android:layout_marginBottom="29dp"
+    android:text="@string/manual_mode"
+    app:layout_constraintBottom_toTopOf="@+id/joystickView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.36"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/carLogo"
+    app:layout_constraintVertical_bias="0.461" />
+
+  <TextView
+    android:id="@+id/footer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="176dp"
+    android:layout_marginLeft="176dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="177dp"
+    android:layout_marginRight="177dp"
+    android:text="@string/footer"
+    android:textColor="@color/textColorLight"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/lightBackground" />
+
+
+</android.support.constraint.ConstraintLayout>
