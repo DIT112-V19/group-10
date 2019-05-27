@@ -56,4 +56,4 @@ We emphasize high code quality in our work: we take a step beyond functionality 
 
 The high-level overview of our two-tier system is depicted in the picture below:
 
-
+![deployment diagram](https://github.com/DIT112-V19/group-10/blob/documentation/DeploymentDiagram.png)
