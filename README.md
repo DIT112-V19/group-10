@@ -1,9 +1,9 @@
 # Group 10
 
 ## Project Proposal
-Self driving cars are getting more and more popular as the underlying technology improves. We believe that in the near future this new technology will be part of our lives.
+Self driving cars are getting more and more popular as we develop and refine the technology needed. We believe that in the near future this new technology will be part of our daily lives and can be seen more and more driving in our streets.
 
-### WHAT ? 
+### What ? 
 Our product aims to simulate a real-world driving experience and introduces the user to some aspects of self driving cars.
 
 ### WHY ?
