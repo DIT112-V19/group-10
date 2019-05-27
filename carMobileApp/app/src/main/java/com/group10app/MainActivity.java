@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 
 import java.io.IOException;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     String outputMessage = "a";
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+      Log.e("input",outputMessage);
     } catch (IOException e) {
       e.printStackTrace();
     }

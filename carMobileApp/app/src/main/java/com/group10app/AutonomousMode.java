@@ -20,6 +20,7 @@ public class AutonomousMode extends AppCompatActivity {
   private static final String OBS = "obstacle detected";
   private static final String FINE = "driving";
   private static final String STOPPED = "stopped";
+  String outputMessage;
   private UpdateStatus update = new UpdateStatus();
 
   @Override
@@ -71,12 +72,13 @@ public class AutonomousMode extends AppCompatActivity {
   public void toggleButton(View view) {
     Button button = findViewById(R.id.autonomousDrive);
     //button.setText(update.getButton(isStopped));
-    String outputMessage = "d";
+    outputMessage = "d";
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
     } catch (IOException e) {
       e.printStackTrace();
     }
+    //showArduinoSpeed();
     //isStopped = !isStopped;
 
     //getStatus();
@@ -85,7 +87,7 @@ public class AutonomousMode extends AppCompatActivity {
 
   public void followLine(View view) {
     Button button = findViewById(R.id.lineFollowing);
-    String outputMessage = "c";
+    outputMessage = "c";
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
     } catch (IOException e) {
@@ -96,7 +98,7 @@ public class AutonomousMode extends AppCompatActivity {
   
   public void startTriangle(View view){
     Button button = findViewById(R.id.triangle);
-    String outputMessage = "t";
+    outputMessage = "t";
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
     } catch (IOException e) {
@@ -107,24 +109,41 @@ public class AutonomousMode extends AppCompatActivity {
 
   public void stop(View view){
     Button button = findViewById(R.id.stop);
-    String outputMessage = "q";
+    //showArduinoSpeed();
+    /*String outputMessage = "q";
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
     } catch (IOException e) {
       e.printStackTrace();
-    }
+    }*/
   }
-  
-  public String showArduinoSpeed(){
-    String input = null;
+
+  public void onDestroy(){
+    super.onDestroy();
+    outputMessage = "q";
     try {
-      input = String.valueOf(DeviceConnection.btSocket.getInputStream().toString());
-      Log.e("BT input",input);
+      DeviceConnection.btSocket.getOutputStream().write((outputMessage.getBytes()));
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return input;
+    Log.e("BT output",outputMessage);
   }
+
+  /*public void showArduinoSpeed(){
+    byte[] buffer = new byte[256];
+    int bytes;
+    String message = null;
+    //String output = "x"
+    try {
+      //DeviceConnection.btSocket.getOutputStream().write(output.getBytes());
+      bytes = DeviceConnection.btSocket.getInputStream().read(buffer);
+      message = new String(buffer,0,bytes);
+      Log.e("BT input",message);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+  }*/
   public void getSpeed(View view) {
     currentStatus = findViewById(R.id.updatedCurrentSpeed);
     currentStatus.setText(update.getSpeed());

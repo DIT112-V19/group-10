@@ -23,7 +23,8 @@ public class ManualMode extends AppCompatActivity {
   private ImageView rightArrow;
   private ImageView leftArrow;
   private Button stopButton;
-
+  String outputMessage;
+  boolean forward;
 
 
   private final String LOG_TAG = ManualMode.class.getSimpleName();
@@ -44,40 +45,12 @@ public class ManualMode extends AppCompatActivity {
     leftArrow = findViewById(R.id.leftArrow);
     stopButton = findViewById(R.id.stopButton);
 
-    /*forwardArrow.setOnTouchListener(new View.OnTouchListener() {
-      @Override
-      public boolean onTouch(View v, MotionEvent event) {
-        if(event.getAction() == MotionEvent.ACTION_DOWN) {
-
-          char outputMessage = 'f';
-          try {
-              DeviceConnection.btSocket.getOutputStream().write(outputMessage);
-          } catch (IOException e) {
-            e.printStackTrace();
-          }
-          connectionData("Sent: " + outputMessage);
-          return true;
-        } else if (event.getAction() == MotionEvent.ACTION_UP) {
-          char outputMessage = 'q';
-          try {
-            DeviceConnection.btSocket.getOutputStream().write(outputMessage);
-          } catch (IOException e) {
-            e.printStackTrace();
-          }
-          return true;
-        }
-        fwdArrowClicked = true;
-        bckwArrowClicked = false;
-        rightArrowClicked = false;
-        leftArrowClicked = false;
-        return false;
-      }
-    }); */
-
     forwardArrow.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        String outputMessage = "f";
+        outputMessage = "f";
+        //AutonomousMode.showArduinoSpeed();
+        forward = true;
         try {
           DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
         } catch (IOException e) {
@@ -94,7 +67,8 @@ public class ManualMode extends AppCompatActivity {
     backwardArrow.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        String outputMessage = "b";
+        outputMessage = "b";
+        forward = false;
         try {
           DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
         } catch (IOException e) {
@@ -108,44 +82,71 @@ public class ManualMode extends AppCompatActivity {
       }
     });
 
-    rightArrow.setOnClickListener(new OnClickListener() {
+    rightArrow.setOnTouchListener(new View.OnTouchListener() {
       @Override
-      public void onClick(View v) {
-        String outputMessage = "r";
-        try {
-          DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
-        } catch (IOException e) {
-          e.printStackTrace();
+      public boolean onTouch(View v, MotionEvent event) {
+
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+          outputMessage = "r";
+          try {
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+          return true;
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+          if (forward == true) {
+            outputMessage = "f";
+
+          } else  {
+            outputMessage = "b";
+          }
+          try {
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
         }
-        connectionData("Sent: " + outputMessage);
-        rightArrowClicked = true;
-        leftArrowClicked = false;
-        fwdArrowClicked = false;
-        bckwArrowClicked = false;
+        return true;
       }
+
     });
 
-    leftArrow.setOnClickListener(new OnClickListener() {
+
+    leftArrow.setOnTouchListener(new View.OnTouchListener() {
       @Override
-      public void onClick(View v) {
-        String outputMessage = "l";
-        try {
-          DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
-        } catch (IOException e) {
-          e.printStackTrace();
+      public boolean onTouch(View v, MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+          outputMessage = "l";
+          try {
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+          return true;
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+          if (forward == true) {
+            outputMessage = "f";
+
+          } else  {
+            outputMessage = "b";
+          }
+          try {
+            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+
         }
-        connectionData("Sent: " + outputMessage);
-        leftArrowClicked = true;
-        fwdArrowClicked = false;
-        bckwArrowClicked = false;
-        rightArrowClicked = false;
+        return true;
+
       }
     });
 
     stopButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
-        String outputMessage = "x";
+        outputMessage = "x";
         try {
           DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
         } catch (IOException e) {
@@ -164,36 +165,29 @@ public class ManualMode extends AppCompatActivity {
     speedControl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
       @Override
       public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        String outputMessage;
 
         try{
         switch (progress){
           case 0:
             outputMessage = "x";
-            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
             break;
           case 1:
             outputMessage = "2";
-            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
             break;
           case 2:
             outputMessage = "4";
-            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
             break;
           case 3:
             outputMessage = "6";
-            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
             break;
           case 4:
             outputMessage = "8";
-            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
             break;
           case 5:
             outputMessage = "0";
-            DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
             break;
         }
-
+          DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
         } catch (IOException e) {
           e.printStackTrace();
         }
@@ -212,6 +206,17 @@ public class ManualMode extends AppCompatActivity {
 
       }
     });
+  }
+
+  public void onDestroy(){
+    super.onDestroy();
+    outputMessage = "q";
+    Log.e("BT output",outputMessage);
+    try {
+      DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   private void connectionData(final CharSequence text) {
