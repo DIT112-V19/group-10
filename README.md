@@ -54,3 +54,6 @@ We emphasize high code quality in our work: we take a step beyond functionality 
  
 ### REFERENCE / DOCUMENTATION
 
+The high-level overview of our two-tier system is depicted in the picture below:
+
+
