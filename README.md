@@ -33,7 +33,24 @@ We emphasize high code quality in our work: we take a step beyond functionality 
 ### HARDWARES
 
  1. ST-4WD Smart Car Chassis 4WD Speed Car Magnetic Motor Single Layer For Arduino
- 2. 
- 3. 
- 4. 
- 5. 
+ 2. Ultasonic Sensor HC-SR04 (1)
+ 3. Arduino Mega 2560 REV3
+ 4. SmartCar Shield
+ 4. HC-O6 Bluetooth Module
+ 5. Funduino 3 Ch Infrared White/Black Line Detection Module MD-159
+ 6. AA Batteries (8)
+ 7. Odometer (2)
+ 8. Pin Jumpers
+ 9. Gyroscopes GY-50 L3G4200
+ 
+ 
+ ### SOFTWARE
+ ....
+ 
+ ### HOW TO SET UP 
+ ...
+ ### DEPENDENCIES
+ ...
+ 
+### REFERENCE / DOCUMENTATION
+
