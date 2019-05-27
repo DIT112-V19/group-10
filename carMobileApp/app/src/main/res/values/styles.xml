@@ -1,18 +1,40 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorBackgroundDark</item>
-        <item name="colorPrimaryDark">@color/colorBackgroundDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorBackgroundDark</item>
+    <item name="colorPrimaryDark">@color/colorBackgroundDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
 
-    </style>
+  </style>
 
-    <!--Toolbar-->
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:textColorPrimary">@color/colorPrimary</item>
-        <item name="android:background">@color/colorBackgroundDark</item>
-    </style>
+  <!--Toolbar-->
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:textColorPrimary">@color/colorPrimary</item>
+    <item name="android:background">@color/colorBackgroundDark</item>
+  </style>
+
+  <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+  <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+  <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+  <!--Headings-->
+  <style name="heading" >
+    <item name="android:textSize">25sp</item>
+    <item name="android:textColor">@color/textColorLight</item>
+  </style>
+
+  <!--Text-->
+  <style name="text" >
+    <item name="android:textSize">18sp</item>
+    <item name="android:textColor">@color/textColorDark</item>
+  </style>
+
 
 </resources>
