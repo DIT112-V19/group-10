@@ -1,7 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-bluetooth"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="@color/colorBackgroundDark"
   tools:context=".DeviceList" >
 
   <TextView
@@ -9,27 +11,38 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
-    android:text="@string/Text"
-    android:textAppearance="?android:attr/textAppearanceLarge" />
+    style="@style/heading"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="20dp"
+     />
 
   <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="30dp" >
+    android:layout_marginTop="30dp"
+    android:gravity="center"
+    android:orientation="horizontal">
 
     <Button
       android:id="@+id/turnOn"
-      android:layout_width="142dp"
+      android:layout_width="152dp"
       android:layout_height="wrap_content"
-      android:layout_marginStart="30dp"
-      android:text="@string/on" />
+      android:layout_marginRight="10dp"
+      android:layout_marginBottom="10dp"
+      android:background="@color/buttonColorMain"
+      android:text="@string/on"
+      android:textColor="@color/textColorLight" />
 
     <Button
       android:id="@+id/turnOff"
       android:layout_width="152dp"
       android:layout_height="wrap_content"
-      android:text="@string/off" />
+      android:layout_marginLeft="10dp"
+      android:layout_marginBottom="10dp"
+      android:background="@color/buttonColorMain"
+      android:text="@string/off"
+      android:textColor="@color/textColorLight" />
 
   </LinearLayout>
 
@@ -37,15 +50,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_centerHorizontal="true"
+    android:gravity="center"
     android:layout_marginTop="80dp" >
 
     <Button
       android:id="@+id/get_paired_devices"
       android:layout_width="326dp"
       android:layout_height="match_parent"
-      android:layout_marginStart="15dp"
+
+      android:layout_centerHorizontal="true"
+
+      android:background="@color/buttonColorMain"
       android:onClick="getPairedDevices"
-      android:text="@string/List" />
+      android:text="@string/List"
+      android:textColor="@color/textColorLight" />
 
     <ListView
       android:id="@+id/listView"
@@ -55,5 +74,7 @@
     </ListView>
 
   </LinearLayout>
+
+
 
 </RelativeLayout>

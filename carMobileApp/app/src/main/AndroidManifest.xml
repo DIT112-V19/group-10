@@ -15,9 +15,9 @@
 
   <application
     android:allowBackup="false"
-    android:icon="@mipmap/ic_launcher"
+    android:icon="@drawable/taxi"
     android:label="@string/title"
-    android:roundIcon="@mipmap/ic_launcher_round"
+    android:roundIcon="@drawable/taxi"
     android:supportsRtl="true"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     tools:ignore="GoogleAppIndexingWarning">

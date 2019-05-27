@@ -43,14 +43,14 @@ public class AutonomousMode extends AppCompatActivity {
     return obstacleDetected;
   }
 
-  // Updates the current status
-  public void getStatus() {
-    currentStatus = findViewById(R.id.updatedStatus);
-
-    if (obstacleDetected) currentStatus.setText(OBS);
-    else if(isStopped) currentStatus.setText(STOPPED);
-    else currentStatus.setText(FINE);
-  }
+  // Updates the current status - removed, no longer using
+//  public void getStatus() {
+//    currentStatus = findViewById(R.id.updatedStatus);
+//
+//    if (obstacleDetected) currentStatus.setText(OBS);
+//    else if(isStopped) currentStatus.setText(STOPPED);
+//    else currentStatus.setText(FINE);
+//  }
 
   // boolean for easier testing
   public boolean buttonPress() {

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="300dp"
+  android:layout_height="450dp"
+  android:background="@color/colorBackgroundLight">
+
+  <TextView
+    android:id="@+id/close"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:layout_marginStart="136dp"
+    android:layout_marginTop="243dp"
+    android:layout_marginEnd="130dp"
+    android:layout_marginBottom="16dp"
+    android:focusable="true"
+    android:gravity="center"
+    android:text="close"
+    style="@style/text"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView5"
+    app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+    android:id="@+id/textView5"
+    style="@style/text"
+    android:layout_width="273dp"
+    android:layout_height="103dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="184dp"
+    android:layout_marginEnd="7dp"
+    android:padding="10dp"
+    android:text="@string/carPictureCredit"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+  <TextView
+    android:id="@+id/textView6"
+    style="@style/text"
+    android:layout_width="273dp"
+    android:layout_height="103dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="76dp"
+    android:layout_marginEnd="7dp"
+    android:text="@string/carPictureCredit"
+    android:padding="10dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+  <TextView
+    android:id="@+id/textView3"
+    style="@style/heading"
+    android:layout_width="96dp"
+    android:layout_height="58dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="188dp"
+    android:text="@string/credits"
+    android:textColor="@color/textColorDark"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

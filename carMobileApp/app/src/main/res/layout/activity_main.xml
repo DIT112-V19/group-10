@@ -7,108 +7,6 @@
     android:background="@color/colorBackgroundDark"
     tools:context=".MainActivity">
 
-  <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="15dp"
-    android:weightSum="1"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
-    <LinearLayout
-      android:id="@+id/linearLayout0"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-
-      app:layout_constraintBottom_toTopOf="@+id/carLogo"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent">
-
-      <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/device_name"
-        android:textColor="#FFF"
-        android:textSize="18sp" />
-
-      <Space
-        android:layout_width="5dp"
-        android:layout_height="wrap_content" />
-
-      <TextView
-        android:id="@+id/device_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-      android:id="@+id/linearLayout1"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_marginTop="-20dp"
-
-      android:orientation="horizontal"
-      app:layout_constraintBottom_toTopOf="@+id/carLogo"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent">
-
-      <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/device_address"
-        android:textColor="#FFF"
-        android:textSize="18sp" />
-
-      <Space
-        android:layout_width="5dp"
-        android:layout_height="wrap_content" />
-
-      <TextView
-        android:id="@+id/device_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#FFF"
-        android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-      android:id="@+id/linearLayout3"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="horizontal"
-      app:layout_constraintBottom_toTopOf="@+id/linearLayout0"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent">
-
-      <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/device_state"
-        android:textColor="#FFF"
-        android:textSize="18sp" />
-
-      <Space
-        android:layout_width="5dp"
-        android:layout_height="wrap_content" />
-
-      <TextView
-        android:id="@+id/connection_state"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/device_disconnected"
-        android:textColor="#FFF"
-        android:textSize="18sp" />
-    </LinearLayout>
-
-  </LinearLayout>
-
   <ImageView
     android:id="@+id/lightBackground"
     android:layout_width="0dp"
@@ -136,10 +34,8 @@
     android:layout_marginTop="150dp"
     app:layout_constraintBottom_toTopOf="@+id/lightBackground"
     app:layout_constraintEnd_toEndOf="@+id/lightBackground"
-    app:layout_constraintHorizontal_bias="0.497"
     app:layout_constraintStart_toStartOf="@+id/lightBackground"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="1.0"
     app:srcCompat="@drawable/taxi"
     tools:ignore="ContentDescription" />
 
@@ -165,34 +61,31 @@
     android:id="@+id/buttonAutoHomepage"
     android:layout_width="200dp"
     android:layout_height="70dp"
-    android:layout_marginStart="162dp"
-    android:layout_marginTop="184dp"
-    android:layout_marginEnd="162dp"
-    android:layout_marginBottom="30dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="28dp"
+    android:backgroundTint="@color/buttonColorBlue"
     android:onClick="openAutoMode"
     android:text="@string/button_auto_homepage"
-    app:layout_constraintBottom_toTopOf="@+id/buttonManualHomepage"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.495"
+    android:gravity="center"
+    app:layout_constraintEnd_toEndOf="@+id/lightBackground"
+    app:layout_constraintHorizontal_bias="0.592"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/lightBackground" />
+    app:layout_constraintTop_toBottomOf="@+id/button2" />
 
   <Button
     android:id="@+id/buttonManualHomepage"
     android:layout_width="200dp"
     android:layout_height="70dp"
-    android:layout_marginStart="162dp"
-    android:layout_marginTop="30dp"
-    android:layout_marginEnd="162dp"
-    android:layout_marginBottom="8dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="28dp"
+    android:backgroundTint="@color/buttonColorPurple"
     android:onClick="openManualMode"
     android:text="@string/button_manual_homepage"
-    app:layout_constraintBottom_toBottomOf="@+id/lightBackground"
+    android:gravity="center"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.495"
+    app:layout_constraintHorizontal_bias="0.502"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/buttonAutoHomepage"
-    app:layout_constraintVertical_bias="0.033" />
+    app:layout_constraintTop_toBottomOf="@+id/buttonAutoHomepage" />
 
     <TextView
         android:id="@+id/credits"
@@ -205,6 +98,8 @@
         android:layout_marginRight="60dp"
         android:layout_marginBottom="16dp"
         android:text="@string/credits"
+      android:focusable="true"
+      android:onClick="openCredits"
         android:textColor="@color/textColorLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -222,27 +117,147 @@
         android:layout_marginRight="69dp"
         android:layout_marginBottom="19dp"
         android:text="@string/instructions"
+      android:focusable="true"
+      android:onClick="openInstructions"
         android:textColor="@color/textColorLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/github"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lightBackground" />
 
-
   <Button
     android:id="@+id/button2"
     android:layout_width="191dp"
     android:layout_height="64dp"
-    android:layout_marginStart="1dp"
-    android:layout_marginTop="37dp"
-    android:layout_marginBottom="42dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="28dp"
     android:onClick="openDeviceScan"
     android:text="@string/connect_to_car"
-    app:layout_constraintBottom_toTopOf="@+id/buttonAutoHomepage"
-    app:layout_constraintEnd_toEndOf="@+id/carLogo"
-    app:layout_constraintHorizontal_bias="0.554"
-    app:layout_constraintStart_toStartOf="@+id/carLogo"
-    app:layout_constraintTop_toBottomOf="@+id/carLogo"
-    app:layout_constraintVertical_bias="0.444" />
+    android:gravity="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/carLogo" />
+
+  <TextView
+    android:id="@+id/textView"
+    style="@style/heading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="50dp"
+    android:text="@string/company_name"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/textView2"
+    style="@style/heading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:text="@string/title"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <LinearLayout
+    android:layout_width="340dp"
+    android:layout_height="100dp"
+    android:layout_marginTop="552dp"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:weightSum="1"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.492"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+      android:id="@+id/linearLayout0"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+
+      app:layout_constraintBottom_toTopOf="@+id/carLogo"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/device_name"
+        android:textColor="@color/textColorDark" />
+
+      <Space
+        android:layout_width="5dp"
+        android:layout_height="wrap_content" />
+
+      <TextView
+        android:id="@+id/device_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorDark" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/linearLayout1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="-20dp"
+
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toTopOf="@+id/carLogo"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/device_address"
+        android:textColor="@color/textColorDark" />
+
+      <Space
+        android:layout_width="5dp"
+        android:layout_height="wrap_content" />
+
+      <TextView
+        android:id="@+id/device_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorDark" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/linearLayout3"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toTopOf="@+id/linearLayout0"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/device_state"
+        android:textColor="@color/textColorDark" />
+
+      <Space
+        android:layout_width="5dp"
+        android:layout_height="wrap_content" />
+
+      <TextView
+        android:id="@+id/connection_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/device_disconnected"
+        android:textColor="@color/textColorDark" />
+    </LinearLayout>
+
+  </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
