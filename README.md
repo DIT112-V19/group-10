@@ -3,11 +3,12 @@
 ## Project Proposal
 Self driving cars are getting more and more popular as the underlying technology improves. We believe that in the near future this new technology will be part of our lives.
 
-
 ### WHAT ? 
 Our product aims to simulate a real-world driving experience and introduces the user to some aspects of self driving cars.
+
 ### WHY ?
-thus helping to reduce the fears and distrust surrounding the current advancements. We want this technology to be accessible as we believe that anyone should be able to experience the benefits of a self driving car and an insight into the technology behind it.
+We believe that such experience will help reducing the fears and distrust surrounding the current advancements. We want this technology to be accessible as we believe that anyone should be able to experience the benefits of a self driving car and an insight into the technology behind it.
+
 ### HOW ?
 This product works on two platforms: an Arduino car and a mobile application.
 The car will be able to drive autonomously by following a line and avoiding obstacles. Using a mobile app, the user will be able to manually control the car. Both the car and the app will have security measures, to prevent unauthorized access to the car. The app will allow the user to easily switch between autonomous and manual mode.
