@@ -1,9 +1,9 @@
-# Group 10
+# Sally Carrera  [![Build Status](https://travis-ci.org/DIT112-V19/group-10.svg?branch=master)](https://travis-ci.org/DIT112-V19/group-10) [![codecov](https://codecov.io/gh/DIT112-V19/group-10/branch/master/graph/badge.svg)](https://codecov.io/gh/DIT112-V19/group-10/branch/master) ![Image description](https://vignette.wikia.nocookie.net/pixar/images/4/4b/Sally_carrera.png/revision/latest?cb=20140314011950)
 
 ## Project Proposal
 Self driving cars are getting more and more popular as we develop and refine the technology needed. We believe that in the near future this new technology will be part of our daily lives and can be seen more and more driving in our streets.
 
-### What ? 
+### WHAT ? 
 Our product aims to simulate a real-world driving experience and introduces the user to some aspects of self driving cars.
 
 ### WHY ?
@@ -13,9 +13,6 @@ We believe that such experience will help reducing the fears and distrust surrou
 This product works on two platforms: an Arduino car and a mobile application.
 The car will be able to drive autonomously by following a line and avoiding obstacles. Using a mobile app, the user will be able to manually control the car. Both the car and the app will have security measures, to prevent unauthorized access to the car. The app will allow the user to easily switch between autonomous and manual mode.
 
-[![Build Status](https://travis-ci.org/DIT112-V19/group-10.svg?branch=master)](https://travis-ci.org/DIT112-V19/group-10)
-
-[![codecov](https://codecov.io/gh/DIT112-V19/group-10/branch/master/graph/badge.svg)](https://codecov.io/gh/DIT112-V19/group-10/branch/master)
 
 ### FEATURES
 ##### Obstacle avoidance
@@ -30,7 +27,7 @@ This feature gives the user manual control over the car. Using the app, the user
 We emphasize high code quality in our work: we take a step beyond functionality and invest in maintainability. Master branch is protected by continuous integration platform that builds and tests the code when any change is applied. Additionally, unit test coverage report is issued. Mobile app coverage is continuously increasing. Arduino code tests are planned.
 
 
-### HARDWARES
+### HARDWARE ARCHITECTURE
 
  1. ST-4WD Smart Car Chassis 4WD Speed Car Magnetic Motor Single Layer For Arduino
  2. Ultasonic Sensor HC-SR04 (1)
@@ -44,7 +41,9 @@ We emphasize high code quality in our work: we take a step beyond functionality 
  9. Gyroscopes GY-50 L3G4200
  
  
- ### SOFTWARE
+ ### SOFTWARE ARCHITECTURE
+ The high-level overview of our two-tier system is depicted in the picture below:
+![deployment diagram](https://github.com/DIT112-V19/group-10/blob/documentation/DeploymentDiagram.png)
  ....
  
  ### HOW TO SET UP 
@@ -54,6 +53,4 @@ We emphasize high code quality in our work: we take a step beyond functionality 
  
 ### REFERENCE / DOCUMENTATION
 
-The high-level overview of our two-tier system is depicted in the picture below:
 
-![deployment diagram](https://github.com/DIT112-V19/group-10/blob/documentation/DeploymentDiagram.png)
