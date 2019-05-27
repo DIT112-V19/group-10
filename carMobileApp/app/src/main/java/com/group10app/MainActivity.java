@@ -43,13 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
   public void openManualMode(View view) {
     startActivity(new Intent(this, ManualMode.class));
-    if (DeviceConnection.btSocket != null) {
-      String outputMessage = "a";
-      try {
-        DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
+
+    String outputMessage = "a";
+    try {
+      DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+    } catch (IOException e) {
+      e.printStackTrace();
     }
 
   }
