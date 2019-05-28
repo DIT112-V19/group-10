@@ -163,16 +163,16 @@
     app:layout_constraintTop_toTopOf="parent" />
 
   <LinearLayout
-    android:layout_width="340dp"
-    android:layout_height="100dp"
-    android:layout_marginTop="552dp"
+    android:layout_width="341dp"
+    android:layout_height="86dp"
+    android:layout_marginBottom="44dp"
     android:orientation="vertical"
     android:padding="15dp"
     android:weightSum="1"
+    app:layout_constraintBottom_toTopOf="@+id/github"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.492"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:layout_constraintHorizontal_bias="0.463"
+    app:layout_constraintStart_toStartOf="parent">
 
     <LinearLayout
       android:id="@+id/linearLayout0"
@@ -185,15 +185,15 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent">
 
+      <Space
+        android:layout_width="5dp"
+        android:layout_height="wrap_content" />
+
       <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/device_name"
         android:textColor="@color/textColorDark" />
-
-      <Space
-        android:layout_width="5dp"
-        android:layout_height="wrap_content" />
 
       <TextView
         android:id="@+id/device_name"
@@ -206,7 +206,7 @@
       android:id="@+id/linearLayout1"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginTop="-20dp"
+
 
       android:orientation="horizontal"
       app:layout_constraintBottom_toTopOf="@+id/carLogo"
@@ -214,15 +214,15 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent">
 
-      <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/device_address"
-        android:textColor="@color/textColorDark" />
-
       <Space
         android:layout_width="5dp"
         android:layout_height="wrap_content" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="@string/device_address"
+        android:textColor="@color/textColorDark" />
 
       <TextView
         android:id="@+id/device_address"
@@ -234,7 +234,7 @@
     <LinearLayout
       android:id="@+id/linearLayout3"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
+      android:layout_height="wrap_content"
       android:orientation="horizontal"
       app:layout_constraintBottom_toTopOf="@+id/linearLayout0"
       app:layout_constraintEnd_toEndOf="parent"
