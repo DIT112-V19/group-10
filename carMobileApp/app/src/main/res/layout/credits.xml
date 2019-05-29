@@ -65,6 +65,7 @@
     android:layout_marginTop="16dp"
     android:layout_marginEnd="188dp"
     android:text="@string/credits"
+    android:textStyle="bold"
     android:textColor="@color/textColorDark"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
