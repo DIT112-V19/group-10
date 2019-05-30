@@ -45,6 +45,8 @@ We emphasize high quality code in our work: we take a step beyond functionality 
  8. Pin Jumpers
  9. Gyroscopes GY-50 L3G4200
  
+ ![alt text](https://github.com/DIT112-V19/group-10/blob/documentation/car2.jpg)![alt text](https://github.com/DIT112-V19/group-10/blob/documentation/car1.jpg)
+ 
  
  ### HOW TO SET UP 
  
@@ -64,7 +66,7 @@ We emphasize high quality code in our work: we take a step beyond functionality 
   git clone https://github.com/DIT112-V19/group-10.git
   ```
   
-  #### Car
+  #### ARDUINO CAR
   
   If you like our product and feel an unresistable urge to build the car from scratch, the best way for you is to visit the [github repository of Dimitris Platis](https://github.com/platisd/smartcar_shield) that has extensive documentation on the harware of this car and the library we used.
   
@@ -91,7 +93,7 @@ We emphasize high quality code in our work: we take a step beyond functionality 
    That's about it! Let's move on to the settings of the app.
   
   
-  #### App
+  #### MOBILE APPLICATION
  
  Our app is currently not available from any app store, but if you enjoy putting together an arduino car you will surely enjoy entering your smartphone as a developer.
  
