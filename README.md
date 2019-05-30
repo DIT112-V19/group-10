@@ -130,10 +130,10 @@ You're all set. Enjoy!
   
   ### DEVELOPERS
  
- - Katalin Ferenc
- - Armin Ghoroghi
- - Tarik Durakovic
- - Gagandeep Singh
- - Florence Afolabi
- - Al-Amir Adegbuji-Onikoyi
- - Hamidreza Yaghoobzadeh Tari
+ - [Katalin Ferenc](https://github.com/ferenckata)
+ - [Armin Ghoroghi](https://github.com/armin2118)
+ - [Tarik Durakovic](https://github.com/tarikdurakovic)
+ - [Gagandeep Singh](https://github.com/gagan0723)
+ - [Florence Afolabi](https://github.com/florenceafo)
+ - [Al-Amir Adegbuji-Onikoyi](https://github.com/amirneutron)
+ - [Hamidreza Yaghoobzadeh Tari](https://github.com/Masiha77)
