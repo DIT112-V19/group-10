@@ -47,7 +47,6 @@ We emphasize high quality code in our work: we take a step beyond functionality 
  
  ![alt text](https://github.com/DIT112-V19/group-10/blob/documentation/car2.jpg)![alt text](https://github.com/DIT112-V19/group-10/blob/documentation/car1.jpg)
  
- 
  ### HOW TO SET UP 
  
  #### Dependencies
@@ -128,3 +127,13 @@ You're all set. Enjoy!
   ...
   
   ### REFERENCE / DOCUMENTATION
+  
+  ### DEVELOPERS
+ 
+ - Katalin Ferenc
+ - Armin Ghoroghi
+ - Tarik Durakovic
+ - Gagandeep Singh
+ - Florence Afolabi
+ - Al-Amir Adegbuji-Onikoyi
+ - Hamidreza Yaghoobzadeh Tari
