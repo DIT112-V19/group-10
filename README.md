@@ -54,6 +54,13 @@ We emphasize high quality code in our work: we take a step beyond functionality 
 
   - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
   - [Android Studio](https://developer.android.com/studio)
+  
+  #### Before we begin
+  
+  We love open source software, so all of our code can be found in this repository. We encourage you to contribute to our project by opening a new issue, adding more functions or give a feedback. You are more than welcome to browse among the existing issues and fix some bugs!
+  
+  Note: If you chose to contribute, you will not be able to push to master unless the code compiles, all of our tests pass and at least another contributing member approved your code. But do not let this discourage you, on the contrary: mess as much as you want, we're all safe!
+  
  
  ### HOW TO SET UP 
  
@@ -120,18 +127,11 @@ We emphasize high quality code in our work: we take a step beyond functionality 
 
 You're all set. Enjoy!
 
-
-
- #### Before we begin
+### REFERENCE / DOCUMENTATION
   
-  We love open source software, so all of our code can be found in this repository. We encourage you to contribute to our project by opening a new issue, adding more functions or give a feedback. You are more than welcome to browse among the existing issues and fix some bugs!
-  
-  Note: If you chose to contribute, you will not be able to push to master unless the code compiles, all of our tests pass and at least another contributing member approved your code. But do not let this discourage you, on the contrary: mess as much as you want, we're all safe!
-  
-  #### Where to start
+  #### How to use
   ...
   
-  ### REFERENCE / DOCUMENTATION
   
   ### DEVELOPERS
  
