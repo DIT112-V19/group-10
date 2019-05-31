@@ -10,7 +10,7 @@ import android.view.View;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-
+  String outputMessage;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     new DeviceConnection(this, getIntent()).execute();
-
   }
 
   public void openDeviceScan(View view) {
@@ -27,17 +26,19 @@ public class MainActivity extends AppCompatActivity {
 
   public void openAutoMode(View view) {
     startActivity(new Intent(this, AutonomousMode.class));
-    /*String outputMessage = "d";
+    outputMessage = "b";
+
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
     } catch (IOException e) {
       e.printStackTrace();
-    }*/
+    }
   }
 
   public void openManualMode(View view) {
     startActivity(new Intent(this, ManualMode.class));
-    String outputMessage = "a";
+    outputMessage = "a";
+
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
       Log.e("input",outputMessage);
@@ -46,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
-
-  //Links to github repository
+  // Links to github repository
   public void openRepo(View view) {
     String gitUrl = getResources().getString(R.string.githubUrl);
     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(gitUrl));
