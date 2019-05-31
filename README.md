@@ -126,6 +126,8 @@ We emphasize high quality code in our work: we take a step beyond functionality 
 You're all set. Enjoy!
 
   #### MOBILE APPLICATION - HOW TO USE
+  
+Before opening the app, make sure you paired the car with your phone through the phone's own Bluetooth settings. After opening the app and chosing Bluetooth connection you can chose the car from the list of paired devices.
 
 The app allows you to use the car in two different ways. Choose autonomous mode to experience a self driving car or, choose manual mode to freely control it.
 
