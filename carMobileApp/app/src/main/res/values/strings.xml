@@ -18,14 +18,15 @@
   <string name="initial_status">stopped</string>
   <string name="start">start</string>
   <string name="stop">stop</string>
-  <string name="current_speed">current speed (cm/s):</string>
-  <string name="distance_travelled">distance travelled (cm):</string>
+  <string name="current_speed">current speed (m/s):</string>
+  <string name="distance_travelled">distance travelled (m):</string>
 
   <!--Autonomous mode-->
   <string name="auto_mode">Autonomous Mode</string>
 
   <!--Manual mode-->
   <string name="manual_mode">Manual Mode</string>
+  <string name="joystick_mode">Joystick Mode</string>
 
   <!--Footer-->
   <string name="footer">&company; | &title;</string>
@@ -44,6 +45,6 @@
   <string name="device_address">Address:</string>
   <string name="device_state">Status:</string>
   <string name="device_disconnected">Connected</string>
+  <string name="title_activity_joystick">Joystick</string>
 
 </resources>
-

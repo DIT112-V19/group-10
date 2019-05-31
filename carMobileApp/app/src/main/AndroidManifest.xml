@@ -3,13 +3,15 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="com.group10app">
 
-  <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-  <uses-permission android:name="android.permission.BLUETOOTH"/>
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-  <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+  <uses-feature
+    android:name="android.hardware.bluetooth_le"
+    android:required="true" />
 
   <application
     android:allowBackup="false"
@@ -20,17 +22,18 @@
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
     tools:ignore="GoogleAppIndexingWarning">
 
-    <activity android:name=".DeviceList">
+
+    <activity android:name=".MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".MainActivity" />
+    <activity android:name=".DeviceList" />
     <activity android:name=".ManualMode" />
     <activity android:name=".AutonomousMode" />
-
+    <activity android:name=".Joystick" />
   </application>
 
 </manifest>

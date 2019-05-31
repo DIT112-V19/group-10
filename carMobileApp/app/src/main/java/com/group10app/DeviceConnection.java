@@ -39,32 +39,16 @@ public class DeviceConnection extends AsyncTask<Void, Void, Void> {
     progress = ProgressDialog.show(context, "Connecting...", "Please wait!!!");
   }
 
-  @Override
   protected Void doInBackground(Void... devices) {
-    try {
-
-      if (btSocket == null || !isConnected) {
-        BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
-        BluetoothDevice bluetoothDevice = bluetooth.getRemoteDevice(macAddress);
-        btSocket = bluetoothDevice.createInsecureRfcommSocketToServiceRecord(myUUID);
-        BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
-        btSocket.connect();
+    ((Activity)context).runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        TextView name = ((Activity)context).findViewById(R.id.device_name);
+        name.setText(deviceName);
+        TextView address = ((Activity)context).findViewById(R.id.device_address);
+        address.setText(macAddress);
       }
-
-      ((Activity)context).runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-          TextView name = ((Activity)context).findViewById(R.id.device_name);
-          name.setText(deviceName);
-          TextView address = ((Activity)context).findViewById(R.id.device_address);
-          address.setText(macAddress);
-        }
-      });
-    }
-    catch (IOException e) {
-      isConnected = false;
-    }
-
+    });
     return null;
   }
 
