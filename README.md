@@ -146,7 +146,8 @@ If you need to reconnect to the arduino, click the CONNECT TO CAR button on the 
 ### REFERENCE / DOCUMENTATION
 
   #### How to use
-  ...
+  
+  All you need to know can be found in our [Wiki page](https://github.com/DIT112-V19/group-10/wiki)
 
 
   ### DEVELOPERS
