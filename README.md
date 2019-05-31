@@ -31,6 +31,10 @@ This feature gives the user manual control over the car. Using the app, the user
 ##### Code quality
 We emphasize high quality code in our work: we take a step beyond functionality and invest in maintainability. Master branch is protected by continuous integration platform that builds and tests the code when any change is applied. Additionally, unit test coverage report is issued. Mobile app coverage is continuously increasing. Arduino code tests are planned.
 
+### DOCUMENTATION
+  
+  All you need to know can be found on our [Wiki page](https://github.com/DIT112-V19/group-10/wiki).
+
 
 ### HARDWARE ARCHITECTURE
 
@@ -142,12 +146,6 @@ Use the seek bar to control speed, based on five pre-made settings.
 Move forward, backward, left and right by pressing and holding the arrows.
 For a different experience, make use of the joystick by clicking JOYSTICK MODE.
 If you need to reconnect to the arduino, click the CONNECT TO CAR button on the app.
-
-### REFERENCE / DOCUMENTATION
-
-  #### How to use
-  
-  All you need to know can be found in our [Wiki page](https://github.com/DIT112-V19/group-10/wiki)
 
 
   ### DEVELOPERS
