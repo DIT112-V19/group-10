@@ -47,13 +47,21 @@ We emphasize high quality code in our work: we take a step beyond functionality 
  
  ![alt text](https://github.com/DIT112-V19/group-10/blob/documentation/car2.jpg)![alt text](https://github.com/DIT112-V19/group-10/blob/documentation/car1.jpg)
  
+ ### SOFTWARE ARCHITECTURE
+ 
+ The high-level overview of our two-tier system is depicted in the picture below:
+![deployment diagram](https://github.com/DIT112-V19/group-10/blob/documentation/DeploymentDiagram.png)
+
+  - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+  - [Android Studio](https://developer.android.com/studio)
+ 
  ### HOW TO SET UP 
  
  #### Dependencies
   - Hardware listed above
   - Phone powered by Android (version 4.3+)
-  - Android Studio
-  - Arduino IDE
+  - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+  - [Android Studio](https://developer.android.com/studio)
   
   #### Where to start
   
@@ -112,10 +120,7 @@ We emphasize high quality code in our work: we take a step beyond functionality 
 
 You're all set. Enjoy!
 
- ### FOR DEVELOPERS
- 
- The high-level overview of our two-tier system is depicted in the picture below:
-![deployment diagram](https://github.com/DIT112-V19/group-10/blob/documentation/DeploymentDiagram.png)
+
 
  #### Before we begin
   
