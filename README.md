@@ -64,13 +64,20 @@ We emphasize high quality code in our work: we take a step beyond functionality 
   Note: If you chose to contribute, you will not be able to push to master unless the code compiles, all of our tests pass and at least another contributing member approved your code. But do not let this discourage you, on the contrary: mess as much as you want, we're all safe!
 
 
- ### HOW TO SET UP
-
+ ### HOW TO SET-UP
+ #### QUICK SET-UP  
+  - Assemble the vehicle hardware as shown in the [image above](https://github.com/DIT112-V19/group-10/blob/documentation/car2.jpg)
+  - Install the [library](https://www.ardu-badge.com/Smartcar%20shield) from the [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+  - [Connect the motors appropriately in the specified pins](https://github.com/DIT112-V19/group-10/blob/master/src/master/master.ino)
+  - Upload & compile the code on the arduino.
+  
  #### Dependencies
   - Hardware listed above
   - Phone powered by Android (version 4.3+)
   - [Arduino IDE](https://www.arduino.cc/en/Main/Software)
   - [Android Studio](https://developer.android.com/studio)
+  
+
 
   #### Where to start
 
@@ -86,7 +93,7 @@ We emphasize high quality code in our work: we take a step beyond functionality 
 
   If you like our product and feel an unresistable urge to build the car from scratch, the best way for you is to visit the [github repository of Dimitris Platis](https://github.com/platisd/smartcar_shield) that has extensive documentation on the harware of this car and the library we used.
 
-  Once you have the hardware assembled, you will need to upload the ```master.ino``` sketch to your car. If you have never worked with Arduino yet, here is our guideline:
+  Once you have the hardware assembled, you will need to upload the [master](https://github.com/DIT112-V19/group-10/blob/master/src/master/master.ino) sketch to your car. If you have never worked with Arduino yet, here is our guideline:
 
   1. Open Arduino IDE
 
