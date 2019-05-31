@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-  String outputMessage;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
   public void openAutoMode(View view) {
     startActivity(new Intent(this, AutonomousMode.class));
-    outputMessage = "b";
+    String outputMessage = "b";
 
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
@@ -37,17 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
   public void openManualMode(View view) {
     startActivity(new Intent(this, ManualMode.class));
-    outputMessage = "a";
+    String outputMessage = "a";
 
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
-      Log.e("input",outputMessage);
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
-  // Links to github repository
+  //Links to github repository
   public void openRepo(View view) {
     String gitUrl = getResources().getString(R.string.githubUrl);
     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(gitUrl));

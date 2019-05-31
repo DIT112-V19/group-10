@@ -1,6 +1,5 @@
 package com.group10app;
 
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -22,6 +21,7 @@ public class ManualMode extends AppCompatActivity {
   String outputMessage;
   String forwardBackward;
 
+  private final String LOG_TAG = ManualMode.class.getSimpleName();
   // attributes for testing arrow click
   private boolean leftArrowClicked = false;
   private boolean rightArrowClicked = false;
@@ -80,6 +80,7 @@ public class ManualMode extends AppCompatActivity {
     rightArrow.setOnTouchListener(new View.OnTouchListener() {
       @Override
       public boolean onTouch(View v, MotionEvent event) {
+
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
           outputMessage = "r";
 
@@ -94,7 +95,7 @@ public class ManualMode extends AppCompatActivity {
 
           if (forwardBackward == "f") {
             outputMessage = "f";
-          } else if(forwardBackward == "b")  {
+          } else if (forwardBackward == "b")  {
             outputMessage = "b";
           }
 
@@ -121,12 +122,13 @@ public class ManualMode extends AppCompatActivity {
           } catch (IOException e) {
             e.printStackTrace();
           }
+
           return true;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
 
           if (forwardBackward == "f") {
             outputMessage = "f";
-          } else if(forwardBackward == "b") {
+          } else if (forwardBackward == "b") {
             outputMessage = "b";
           }
 
@@ -135,6 +137,7 @@ public class ManualMode extends AppCompatActivity {
           } catch (IOException e) {
             e.printStackTrace();
           }
+
         }
 
         return true;
@@ -167,26 +170,26 @@ public class ManualMode extends AppCompatActivity {
       public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
         try {
-        switch (progress) {
-          case 0:
-            outputMessage = "x";
-            break;
-          case 1:
-            outputMessage = "2";
-            break;
-          case 2:
-            outputMessage = "4";
-            break;
-          case 3:
-            outputMessage = "6";
-            break;
-          case 4:
-            outputMessage = "8";
-            break;
-          case 5:
-            outputMessage = "0";
-            break;
-        }
+          switch (progress) {
+            case 0:
+              outputMessage = "x";
+              break;
+            case 1:
+              outputMessage = "2";
+              break;
+            case 2:
+              outputMessage = "4";
+              break;
+            case 3:
+              outputMessage = "6";
+              break;
+            case 4:
+              outputMessage = "8";
+              break;
+            case 5:
+              outputMessage = "0";
+              break;
+          }
 
           DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
         } catch (IOException e) {
@@ -202,9 +205,8 @@ public class ManualMode extends AppCompatActivity {
     });
   }
 
-  public void onBackPressed(){
+  public void onBackPressed() {
     super.onBackPressed();
-
     outputMessage = "q";
 
     try {

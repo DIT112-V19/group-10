@@ -1,6 +1,5 @@
 package com.group10app;
 
-import android.bluetooth.BluetoothSocket;
 import android.os.Bundle;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -25,8 +24,6 @@ public class DeviceList extends AppCompatActivity {
   private ListView listView;
   protected BluetoothAdapter bluetoothAdapter;
   protected Set<BluetoothDevice> pairedDevices;
-
-  private BluetoothSocket btSocket = null;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

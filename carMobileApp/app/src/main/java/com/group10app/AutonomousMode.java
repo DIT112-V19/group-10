@@ -32,15 +32,6 @@ public class AutonomousMode extends AppCompatActivity {
     this.isStopped = isStopped;
   }
 
-  // Updates the current status
-  public void getStatus() {
-    currentStatus = findViewById(R.id.updatedStatus);
-
-    if (obstacleDetected) currentStatus.setText(OBS);
-    else if(isStopped) currentStatus.setText(STOPPED);
-    else currentStatus.setText(FINE);
-  }
-
   // boolean for easier testing
   public boolean buttonPress() {
     return isStopped ? startCar() : stopCar();
@@ -76,7 +67,7 @@ public class AutonomousMode extends AppCompatActivity {
       e.printStackTrace();
     }
   }
-  
+
   public void startTriangle(View view){
     outputMessage = "t";
 
@@ -97,7 +88,7 @@ public class AutonomousMode extends AppCompatActivity {
     }
   }
 
-  public void onBackPressed(){
+  public void onBackPressed() {
     super.onBackPressed();
     outputMessage = "q";
 
