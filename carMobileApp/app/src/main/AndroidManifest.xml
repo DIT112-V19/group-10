@@ -23,14 +23,14 @@
     tools:ignore="GoogleAppIndexingWarning">
 
 
-    <activity android:name=".MainActivity">
+    <activity android:name=".DeviceList">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".DeviceList" />
+    <activity android:name=".MainActivity" />
     <activity android:name=".ManualMode" />
     <activity android:name=".AutonomousMode" />
     <activity android:name=".Joystick" />

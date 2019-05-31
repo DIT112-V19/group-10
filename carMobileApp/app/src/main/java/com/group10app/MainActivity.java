@@ -10,14 +10,12 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
     new DeviceConnection(this, getIntent()).execute();
-
   }
 
   public void openDeviceScan(View view) {
@@ -26,17 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
   public void openAutoMode(View view) {
     startActivity(new Intent(this, AutonomousMode.class));
-    /*String outputMessage = "d";
-    try {
-      DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
-    } catch (IOException e) {
-      e.printStackTrace();
-    }*/
-  }
+    String outputMessage = "b";
 
-  public void openManualMode(View view) {
-    startActivity(new Intent(this, ManualMode.class));
-    String outputMessage = "a";
     try {
       DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
     } catch (IOException e) {
@@ -44,6 +33,16 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
+  public void openManualMode(View view) {
+    startActivity(new Intent(this, ManualMode.class));
+    String outputMessage = "a";
+
+    try {
+      DeviceConnection.btSocket.getOutputStream().write(outputMessage.getBytes());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 
   //Links to github repository
   public void openRepo(View view) {
