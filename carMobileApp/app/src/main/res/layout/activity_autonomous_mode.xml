@@ -108,128 +108,124 @@
   <!--app:layout_constraintStart_toStartOf="@+id/carLogo"-->
   <!--app:layout_constraintTop_toBottomOf="@+id/currentStatus" />-->
 
-  <Button
-    android:id="@+id/autonomousDrive"
-    android:layout_width="191dp"
-    android:layout_height="64dp"
-    android:backgroundTint="@color/buttonColorBlue"
-    android:onClick="toggleButton"
-    android:text="Autonomous Drive"
-    app:layout_constraintBottom_toBottomOf="@+id/lightBackground"
-    app:layout_constraintEnd_toEndOf="@+id/carLogo"
-    app:layout_constraintHorizontal_bias="0.505"
-    app:layout_constraintStart_toStartOf="@+id/carLogo"
-    app:layout_constraintTop_toBottomOf="@+id/carLogo"
-    app:layout_constraintVertical_bias="0.179" />
+  <!--<TextView-->
+    <!--android:id="@+id/currentSpeed"-->
+    <!--style="@style/text"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="24dp"-->
+    <!--android:text="@string/current_speed"-->
+    <!--app:layout_constraintEnd_toEndOf="@+id/lightBackground"-->
+    <!--app:layout_constraintHorizontal_bias="0.13"-->
+    <!--app:layout_constraintStart_toStartOf="@+id/lightBackground"-->
+    <!--app:layout_constraintTop_toTopOf="@+id/lightBackground" />-->
 
-  <TextView
-    android:id="@+id/currentSpeed"
-    style="@style/text"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:text="@string/current_speed"
-    app:layout_constraintEnd_toEndOf="@+id/lightBackground"
-    app:layout_constraintHorizontal_bias="0.13"
-    app:layout_constraintStart_toStartOf="@+id/lightBackground"
-    app:layout_constraintTop_toTopOf="@+id/lightBackground" />
+  <!--<TextView-->
+    <!--android:id="@+id/distanceTravelled"-->
+    <!--style="@style/text"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="24dp"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:text="@string/distance_travelled"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/autonomousDrive"-->
+    <!--app:layout_constraintEnd_toEndOf="@+id/lightBackground"-->
+    <!--app:layout_constraintHorizontal_bias="0.0"-->
+    <!--app:layout_constraintStart_toStartOf="@+id/lightBackground"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/currentSpeed"-->
+    <!--app:layout_constraintVertical_bias="0.993" />-->
 
-  <TextView
-    android:id="@+id/distanceTravelled"
-    style="@style/text"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
+  <!--<TextView-->
+    <!--android:id="@+id/updatedCurrentSpeed"-->
+    <!--style="@style/text"-->
+    <!--android:layout_width="67dp"-->
+    <!--android:layout_height="27dp"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:layout_marginTop="44dp"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--android:layout_marginBottom="203dp"-->
+    <!--android:text="SPEED"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/autonomousDrive"-->
+    <!--app:layout_constraintEnd_toEndOf="@+id/lightBackground"-->
+    <!--app:layout_constraintHorizontal_bias="0.679"-->
+    <!--app:layout_constraintStart_toStartOf="@+id/currentSpeed"-->
+    <!--app:layout_constraintTop_toTopOf="@+id/lightBackground"-->
+    <!--app:layout_constraintVertical_bias="0.103" />-->
+
+  <!--<TextView-->
+    <!--android:id="@+id/currentDistanceTravelled"-->
+    <!--style="@style/text"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:layout_marginEnd="8dp"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--android:text="DISTANCE"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/autonomousDrive"-->
+    <!--app:layout_constraintEnd_toEndOf="@+id/lightBackground"-->
+    <!--app:layout_constraintHorizontal_bias="0.0"-->
+    <!--app:layout_constraintStart_toEndOf="@+id/distanceTravelled"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/currentSpeed"-->
+    <!--app:layout_constraintVertical_bias="0.993" />-->
+
+  <LinearLayout
+    android:layout_width="303dp"
+    android:layout_height="344dp"
+    android:layout_gravity="center"
     android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:text="@string/distance_travelled"
-    app:layout_constraintBottom_toTopOf="@+id/autonomousDrive"
-    app:layout_constraintEnd_toEndOf="@+id/lightBackground"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="@+id/lightBackground"
-    app:layout_constraintTop_toBottomOf="@+id/currentSpeed"
-    app:layout_constraintVertical_bias="0.993" />
-
-  <TextView
-    android:id="@+id/updatedCurrentSpeed"
-    style="@style/text"
-    android:layout_width="67dp"
-    android:layout_height="27dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="44dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginBottom="203dp"
-    android:text="SPEED"
-    app:layout_constraintBottom_toTopOf="@+id/autonomousDrive"
+    android:layout_marginBottom="8dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toTopOf="@+id/footer"
     app:layout_constraintEnd_toEndOf="@+id/lightBackground"
-    app:layout_constraintHorizontal_bias="0.679"
-    app:layout_constraintStart_toStartOf="@+id/currentSpeed"
+    app:layout_constraintHorizontal_bias="0.684"
+    app:layout_constraintStart_toStartOf="@+id/lightBackground"
     app:layout_constraintTop_toTopOf="@+id/lightBackground"
-    app:layout_constraintVertical_bias="0.103" />
+    app:layout_constraintVertical_bias="0.107">
 
-  <TextView
-    android:id="@+id/currentDistanceTravelled"
-    style="@style/text"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginBottom="8dp"
-    android:text="DISTANCE"
-    app:layout_constraintBottom_toTopOf="@+id/autonomousDrive"
-    app:layout_constraintEnd_toEndOf="@+id/lightBackground"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toEndOf="@+id/distanceTravelled"
-    app:layout_constraintTop_toBottomOf="@+id/currentSpeed"
-    app:layout_constraintVertical_bias="0.993" />
+    <Button
+      android:id="@+id/autonomousDrive"
+      android:layout_width="180dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginBottom="6dp"
+      android:backgroundTint="@color/buttonColorBlue"
+      android:onClick="toggleButton"
+      android:text="Autonomous Drive" />
 
-  <Button
-    android:id="@+id/triangle"
-    android:layout_width="191dp"
-    android:layout_height="64dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="116dp"
-    android:backgroundTint="@color/buttonColorBlue"
-    android:onClick="startTriangle"
-    android:text="Triangle"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="@+id/autonomousDrive"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="@+id/autonomousDrive"
-    app:layout_constraintTop_toBottomOf="@+id/autonomousDrive"
-    app:layout_constraintVertical_bias="0.052" />
+    <Button
+      android:id="@+id/triangle"
+      android:layout_width="180dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginBottom="6dp"
+      android:backgroundTint="@color/buttonColorBlue"
+      android:onClick="startTriangle"
+      android:text="Triangle" />
 
-  <Button
-    android:id="@+id/lineFollowing"
-    android:layout_width="191dp"
-    android:layout_height="64dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="116dp"
-    android:backgroundTint="@color/buttonColorBlue"
-    android:onClick="followLine"
-    android:text="Line Following"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="@+id/triangle"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="@+id/triangle"
-    app:layout_constraintTop_toBottomOf="@+id/triangle"
-    app:layout_constraintVertical_bias="0.052" />
+    <Button
+      android:id="@+id/lineFollowing"
+      android:layout_width="180dp"
+      android:layout_height="60dp"
+      android:layout_marginTop="5dp"
+      android:layout_marginBottom="6dp"
+      android:backgroundTint="@color/buttonColorBlue"
+      android:onClick="followLine"
+      android:text="Line Following" />
 
-  <Button
-    android:id="@+id/stop"
-    android:layout_width="191dp"
-    android:layout_height="64dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginBottom="8dp"
-    android:onClick="stop"
-    android:text="STOP"
-    android:backgroundTint="@color/buttonColorRed"
-    app:layout_constraintBottom_toBottomOf="@+id/lightBackground"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/lineFollowing"
-    app:layout_constraintVertical_bias="0.836" />
+    <Button
+      android:id="@+id/stop"
+      android:layout_width="180dp"
+      android:layout_height="60dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="10dp"
+      android:layout_marginEnd="8dp"
+      android:layout_marginBottom="8dp"
+      android:backgroundTint="@color/buttonColorRed"
+      android:onClick="stop"
+      android:text="STOP" />
+  </LinearLayout>
 </android.support.constraint.ConstraintLayout>
