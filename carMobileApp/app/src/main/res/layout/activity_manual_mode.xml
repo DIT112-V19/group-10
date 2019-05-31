@@ -7,20 +7,85 @@
   android:background="@color/colorBackgroundDark"
   tools:context=".ManualMode">
 
+  <android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:layout_marginBottom="4dp"
+    android:background="@color/colorBackgroundDark"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:layout_constraintBottom_toTopOf="@+id/header"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:titleTextColor="@color/colorPrimary" />
+
+  <ImageView
+    android:id="@+id/lightBackground"
+    android:layout_width="342dp"
+    android:layout_height="428dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="200dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginBottom="30dp"
+    android:width="100dp"
+    android:height="100dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1.0"
+    app:srcCompat="@drawable/round_rectangle_shape"
+    tools:ignore="ContentDescription" />
+
+  <ImageView
+    android:id="@+id/carLogo"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="150dp"
+    app:layout_constraintBottom_toTopOf="@+id/lightBackground"
+    app:layout_constraintEnd_toEndOf="@+id/lightBackground"
+    app:layout_constraintStart_toStartOf="@+id/lightBackground"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/taxi"
+    tools:ignore="ContentDescription" />
+
+  <TextView
+    android:id="@+id/header"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="176dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="177dp"
+    android:layout_marginBottom="32dp"
+    android:text="@string/manual_mode"
+    style="@style/heading"
+    android:textColor="@color/textColorLight"
+    app:layout_constraintBottom_toTopOf="@+id/lightBackground"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
   <ImageView
     android:id="@+id/rightArrow"
     android:layout_width="140dp"
     android:layout_height="80dp"
-    android:layout_marginStart="192dp"
+    android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="32dp"
     android:layout_marginBottom="8dp"
+    android:rotation="-90"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="@+id/stopButton"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toEndOf="@+id/stopButton"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.797"
-    app:srcCompat="@drawable/right_arrow" />
+    app:layout_constraintVertical_bias="0.748"
+    app:srcCompat="@drawable/new_arrow" />
 
   <ImageView
     android:id="@+id/forwardArrow"
@@ -28,13 +93,14 @@
     android:layout_height="80dp"
     android:layout_marginStart="8dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginBottom="260dp"
+    android:layout_marginBottom="8dp"
     android:longClickable="true"
-    app:layout_constraintBottom_toBottomOf="parent"
+    android:rotation="180"
+    app:layout_constraintBottom_toTopOf="@+id/stopButton"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.498"
     app:layout_constraintStart_toStartOf="parent"
-    app:srcCompat="@drawable/forward_arrow" />
+    app:srcCompat="@drawable/new_arrow" />
 
   <ImageView
     android:id="@+id/leftArrow"
@@ -42,14 +108,16 @@
     android:layout_height="80dp"
     android:layout_marginStart="32dp"
     android:layout_marginTop="8dp"
-    android:layout_marginEnd="208dp"
+    android:layout_marginEnd="8dp"
     android:layout_marginBottom="8dp"
+    android:rotation="90"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="@+id/stopButton"
+    app:layout_constraintEnd_toStartOf="@+id/stopButton"
+    app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.797"
-    app:srcCompat="@drawable/left_arrow" />
+    app:layout_constraintVertical_bias="0.748"
+    app:srcCompat="@drawable/new_arrow" />
 
   <ImageView
     android:id="@+id/backwardArrow"
@@ -64,13 +132,13 @@
     app:layout_constraintHorizontal_bias="0.498"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="1.0"
-    app:srcCompat="@drawable/backward_arrow" />
+    app:layout_constraintVertical_bias="0.892"
+    app:srcCompat="@drawable/new_arrow" />
 
   <Button
     android:id="@+id/stopButton"
-    android:layout_width="120dp"
-    android:layout_height="120dp"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
@@ -78,6 +146,7 @@
     android:background="@drawable/circle_button"
     android:padding="12dp"
     android:text="@string/stop"
+    android:textColor="@color/textColorLight"
     android:textColorHighlight="#FF0000"
     android:textColorLink="#FF0000"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +154,7 @@
     app:layout_constraintHorizontal_bias="0.498"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.796" />
+    app:layout_constraintVertical_bias="0.751" />
 
   <SeekBar
     android:id="@+id/seekBar2"
@@ -95,16 +164,86 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginBottom="30dp"
+    android:layout_marginBottom="8dp"
     android:max="5"
     android:paddingLeft="16dip"
     android:paddingTop="16dip"
     android:paddingRight="16dip"
     android:paddingBottom="16dip"
     android:progress="2"
-    app:layout_constraintBottom_toTopOf="@+id/forwardArrow"
+    android:thumbTint="@color/buttonColorPurple"
+    android:progressBackgroundTint="@color/buttonColorRed"
+    android:progressTint="@color/buttonColorMain"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.43" />
+
+  <!--<Button-->
+    <!--android:id="@+id/joystickButton"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginStart="144dp"-->
+    <!--android:layout_marginTop="15dp"-->
+    <!--android:layout_marginEnd="179dp"-->
+    <!--android:backgroundTint="@color/buttonColorPurple"-->
+    <!--android:onClick="openJoystickMode"-->
+    <!--android:text="@string/joystick_mode"-->
+    <!--android:textColor="@color/textColorDark"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/lightBackground"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintHorizontal_bias="0.209"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/leftArrow"-->
+    <!--app:layout_constraintVertical_bias="1.0" />-->
+
+  <TextView
+    android:id="@+id/textView17"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="18dp"
+    android:layout_marginEnd="8dp"
+    android:text="Speed"
+    style="@style/text"
+    app:layout_constraintEnd_toStartOf="@+id/seekBar2"
+    app:layout_constraintStart_toStartOf="@+id/seekBar2"
+    app:layout_constraintTop_toTopOf="@+id/lightBackground" />
+
+  <TextView
+    android:id="@+id/textView18"
+    style="@style/text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="7dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="22dp"
+    android:layout_marginBottom="8dp"
+    android:text="100"
+    app:layout_constraintBottom_toBottomOf="@+id/seekBar2"
+    app:layout_constraintEnd_toStartOf="@+id/lightBackground"
+    app:layout_constraintHorizontal_bias="0.106"
+    app:layout_constraintStart_toEndOf="@+id/seekBar2"
+    app:layout_constraintTop_toBottomOf="@+id/textView17"
+    app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+    android:id="@+id/textView19"
+    style="@style/text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:text="0"
+    app:layout_constraintBottom_toBottomOf="@+id/seekBar2"
+    app:layout_constraintEnd_toStartOf="@+id/seekBar2"
+    app:layout_constraintHorizontal_bias="0.947"
+    app:layout_constraintStart_toEndOf="@+id/lightBackground"
+    app:layout_constraintTop_toBottomOf="@+id/textView17"
+    app:layout_constraintVertical_bias="1.0" />
+
 
 </android.support.constraint.ConstraintLayout>
