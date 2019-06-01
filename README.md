@@ -58,7 +58,8 @@ We emphasize high quality code in our work: we take a step beyond functionality 
  ### SOFTWARE ARCHITECTURE
 
  The high-level overview of our two-tier system is depicted in the picture below:
-![deployment diagram](https://github.com/DIT112-V19/group-10/blob/documentation/DeploymentDiagram.png)
+ 
+![deployment diagram](https://github.com/DIT112-V19/group-10/blob/master/DeploymentDiagram.png)
 
 
   #### Before we begin
