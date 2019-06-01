@@ -1,5 +1,9 @@
 # Sally Carrera  [![Build Status](https://travis-ci.org/DIT112-V19/group-10.svg?branch=master)](https://travis-ci.org/DIT112-V19/group-10) [![codecov](https://codecov.io/gh/DIT112-V19/group-10/branch/master/graph/badge.svg)](https://codecov.io/gh/DIT112-V19/group-10/branch/master) ![Image description](https://vignette.wikia.nocookie.net/pixar/images/4/4b/Sally_carrera.png/revision/latest?cb=20140314011950)
 
+### Demo video
+> https://www.youtube.com/watch?v=r77ristYOuk&feature=youtu.be&fbclid=IwAR3klDO55blkXNZHjc1eP7U4rJs0IUEigzKlU7m9skqX0WVAD-2FyOCGGKc
+
+
 ## Project Proposal
 Self driving cars are getting more and more popular as we develop and refine the technology needed. We believe that in the near future this new technology will be part of our daily lives and can be seen more and more driving in our streets.
 
@@ -49,7 +53,7 @@ We emphasize high quality code in our work: we take a step beyond functionality 
  8. Pin Jumpers
  9. Gyroscopes GY-50 L3G4200
 
- ![alt text](https://github.com/DIT112-V19/group-10/blob/documentation/car2.jpg)![alt text](https://github.com/DIT112-V19/group-10/blob/documentation/car1.jpg)
+ ![alt text](https://github.com/DIT112-V19/group-10/blob/master/car2.jpg)![alt text](https://github.com/DIT112-V19/group-10/blob/master/car1.jpg)
 
  ### SOFTWARE ARCHITECTURE
 
